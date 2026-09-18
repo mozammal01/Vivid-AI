@@ -13,8 +13,8 @@ export const FeatureList: React.FC<FeatureListProps> = ({
   features,
   primaryColor = '#6366F1',
   accentColor = '#A855F7',
-  enterFrame = 5,
-  staggerFrames = 10,
+  enterFrame = 3,
+  staggerFrames = 5,
 }) => {
   return (
     <ul
@@ -60,9 +60,9 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
   primaryColor,
   accentColor,
 }) => {
-  const opacity = useStaggerFadeIn(enterFrame, index, staggerFrames, 16);
-  const translateY = useStaggerSlideUp(enterFrame, index, staggerFrames, 16, 36);
-  const scale = useStaggerPopIn(enterFrame, index, staggerFrames, 16, 110);
+  const opacity = useStaggerFadeIn(enterFrame, index, staggerFrames, 10);
+  const translateY = useStaggerSlideUp(enterFrame, index, staggerFrames, 10, 24);
+  const scale = useStaggerPopIn(enterFrame, index, staggerFrames, 16, 140);
 
   return (
     <li

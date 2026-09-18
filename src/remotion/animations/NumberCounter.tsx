@@ -15,7 +15,7 @@ export interface NumberCounterProps {
 export const NumberCounter: React.FC<NumberCounterProps> = ({
   value,
   delay = 0,
-  duration = 40,
+  duration = 18,
   color = '#6366F1',
   size = 48,
   prefix = '',

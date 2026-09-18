@@ -78,6 +78,7 @@ const NewsTicker: React.FC<{ text: string }> = ({ text }) => {
 
 export const BreakingNewsIntro: React.FC<BreakingNewsIntroProps> = (props) => {
   const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
   const headline = safeText(props.headline, breakingNewsIntroDefaultContent.headline, 92);
   const category = safeText(props.category, 'News', 24);
   const location = safeText(props.location, 'Global Desk', 36);
@@ -86,13 +87,22 @@ export const BreakingNewsIntro: React.FC<BreakingNewsIntroProps> = (props) => {
   const tickerText = safeText(props.tickerText, 'Live coverage and verified developments from the newsroom', 140);
   const image = typeof props.image === 'string' && props.image.trim() ? props.image : props.product?.imageUrl;
   const statistic = safeNumber(props.statistic);
-  const finalScale = interpolate(frame, [240, 300], [1.04, 1], { extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) });
-  const transitionOpacity = interpolate(frame, [232, 245], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+
+  const s1 = Math.floor(durationInFrames * 0.15);
+  const s2 = Math.floor(durationInFrames * 0.25);
+  const s3 = Math.floor(durationInFrames * 0.20);
+  const s4 = Math.floor(durationInFrames * 0.20);
+  const s5 = durationInFrames - (s1 + s2 + s3 + s4);
+  const s4Start = s1 + s2 + s3;
+  const s5Start = s1 + s2 + s3 + s4;
+
+  const finalScale = interpolate(frame, [s5Start, durationInFrames], [1.04, 1], { extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) });
+  const transitionOpacity = interpolate(frame, [s5Start - 8, s5Start + 5], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
 
   return <AbsoluteFill style={{ fontFamily: FONT, color: '#F8FAFC', overflow: 'hidden' }}>
     <Background />
 
-    <Sequence durationInFrames={45}>
+    <Sequence durationInFrames={s1}>
       <AbsoluteFill style={{ padding: '105px 130px', justifyContent: 'space-between' }}>
         <div style={{ width: interpolate(frame, [0, 18], [0, 100], { extrapolateRight: 'clamp' }), height: 5, background: RED }} />
         <div><BreakingBadge category={category} /><div style={{ marginTop: 34, fontSize: 54, fontWeight: 850, letterSpacing: '-0.045em' }}>A verified update is developing.</div></div>
@@ -100,34 +110,34 @@ export const BreakingNewsIntro: React.FC<BreakingNewsIntroProps> = (props) => {
       </AbsoluteFill>
     </Sequence>
 
-    <Sequence from={45} durationInFrames={75}>
+    <Sequence from={s1} durationInFrames={s2}>
       <AbsoluteFill style={{ padding: '92px 130px 90px', display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 68, alignItems: 'center' }}>
-        <div style={{ minWidth: 0 }}><BreakingBadge category={category} compact /><MaskReveal direction="up" enterFrame={7} duration={24}><KineticTypography text={headline} enterFrame={9} stagger={2} tokenDuration={22} variant="rise" style={{ marginTop: 26, fontSize: 60, lineHeight: 1.06, fontWeight: 850, letterSpacing: '-0.045em', overflowWrap: 'anywhere' }} /></MaskReveal><div style={{ marginTop: 24, color: 'rgba(226,232,240,0.7)', fontSize: 17, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{source}</div></div>
-        <div style={{ height: 500, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.18)', boxShadow: '0 24px 58px rgba(0,0,0,0.3)' }}><div style={{ width: '100%', height: '100%', transform: `scale(${interpolate(frame - 45, [0, 75], [1.1, 1.02], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' })})` }}><SplitImageReveal src={image} alt={headline} direction="horizontal" enterFrame={8} duration={26} accentColor={RED} borderRadius={0} style={{ width: '100%', height: '100%' }} /></div></div>
+        <div style={{ minWidth: 0 }}><BreakingBadge category={category} compact /><MaskReveal direction="up" enterFrame={4} duration={16}><KineticTypography text={headline} enterFrame={5} stagger={2} tokenDuration={14} variant="rise" style={{ marginTop: 26, fontSize: 60, lineHeight: 1.06, fontWeight: 850, letterSpacing: '-0.045em', overflowWrap: 'anywhere' }} /></MaskReveal><div style={{ marginTop: 24, color: 'rgba(226,232,240,0.7)', fontSize: 17, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{source}</div></div>
+        <div style={{ height: 500, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.18)', boxShadow: '0 24px 58px rgba(0,0,0,0.3)' }}><div style={{ width: '100%', height: '100%', transform: `scale(${interpolate(frame - s1, [0, s2], [1.1, 1.02], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' })})` }}><SplitImageReveal src={image} alt={headline} direction="horizontal" enterFrame={4} duration={18} accentColor={RED} borderRadius={0} style={{ width: '100%', height: '100%' }} /></div></div>
       </AbsoluteFill>
     </Sequence>
 
-    <Sequence from={120} durationInFrames={60}>
+    <Sequence from={s1 + s2} durationInFrames={s3}>
       <AbsoluteFill style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', alignItems: 'stretch' }}>
-        <MapZoom target={{ x: 0.61, y: 0.41 }} zoom={1.22} enterFrame={0} duration={44} coordinates={location.toUpperCase()} color="#E5E7EB" landColor="#1E293B" seaColor="#0B1624"><RouteLine points={[{ x: 290, y: 590 }, { x: 620, y: 400 }, { x: 1050, y: 510 }, { x: 1370, y: 315 }]} delay={12} drawDuration={32} color={RED} width={4} /></MapZoom>
-        <div style={{ position: 'absolute', right: 120, top: 210, width: 610 }}><div style={{ fontSize: 17, color: RED, fontWeight: 900, letterSpacing: '0.16em', textTransform: 'uppercase', marginBottom: 20 }}>Location update</div><MaskReveal direction="right" enterFrame={6} duration={20}><div style={{ fontSize: 58, fontWeight: 850, lineHeight: 1.05, letterSpacing: '-0.045em', overflowWrap: 'anywhere' }}>{location}</div></MaskReveal><p style={{ margin: '25px 0 0', maxWidth: 500, color: 'rgba(226,232,240,0.78)', fontSize: 22, lineHeight: 1.35 }}>Incoming reports are being verified by the live desk.</p></div>
+        <MapZoom target={{ x: 0.61, y: 0.41 }} zoom={1.22} enterFrame={0} duration={32} coordinates={location.toUpperCase()} color="#E5E7EB" landColor="#1E293B" seaColor="#0B1624"><RouteLine points={[{ x: 290, y: 590 }, { x: 620, y: 400 }, { x: 1050, y: 510 }, { x: 1370, y: 315 }]} delay={8} drawDuration={24} color={RED} width={4} /></MapZoom>
+        <div style={{ position: 'absolute', right: 120, top: 210, width: 610 }}><div style={{ fontSize: 17, color: RED, fontWeight: 900, letterSpacing: '0.16em', textTransform: 'uppercase', marginBottom: 20 }}>Location update</div><MaskReveal direction="right" enterFrame={4} duration={14}><div style={{ fontSize: 58, fontWeight: 850, lineHeight: 1.05, letterSpacing: '-0.045em', overflowWrap: 'anywhere' }}>{location}</div></MaskReveal><p style={{ margin: '25px 0 0', maxWidth: 500, color: 'rgba(226,232,240,0.78)', fontSize: 22, lineHeight: 1.35 }}>Incoming reports are being verified by the live desk.</p></div>
       </AbsoluteFill>
     </Sequence>
 
-    <Sequence from={180} durationInFrames={60}>
+    <Sequence from={s4Start} durationInFrames={s4}>
       <AbsoluteFill style={{ padding: '128px 130px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 18, color: RED, fontSize: 18, fontWeight: 900, letterSpacing: '0.14em', textTransform: 'uppercase' }}><span style={{ width: 38, height: 3, background: RED }} /> At a glance</div>
         <div style={{ marginTop: 40, display: 'flex', alignItems: 'stretch', gap: 30 }}>
-          {statistic !== undefined && <div style={{ minWidth: 440, padding: '34px 42px', background: 'rgba(255,255,255,0.06)', borderLeft: `7px solid ${RED}` }}><div style={{ fontSize: 84, lineHeight: 0.95, fontWeight: 900, letterSpacing: '-0.06em' }}>{formatNumber(interpolate(frame - 180, [7, 44], [0, statistic], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) }))}</div><div style={{ marginTop: 16, color: 'rgba(226,232,240,0.72)', fontSize: 19, fontWeight: 700 }}>people affected by the update</div></div>}
+          {statistic !== undefined && <div style={{ minWidth: 440, padding: '34px 42px', background: 'rgba(255,255,255,0.06)', borderLeft: `7px solid ${RED}` }}><div style={{ fontSize: 84, lineHeight: 0.95, fontWeight: 900, letterSpacing: '-0.06em' }}>{formatNumber(interpolate(frame - s4Start, [4, 18], [0, statistic], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) }))}</div><div style={{ marginTop: 16, color: 'rgba(226,232,240,0.72)', fontSize: 19, fontWeight: 700 }}>people affected by the update</div></div>}
           <div style={{ flex: 1, padding: '34px 42px', background: 'rgba(2,6,23,0.58)', border: '1px solid rgba(255,255,255,0.14)' }}><div style={{ color: 'rgba(226,232,240,0.56)', fontSize: 16, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase' }}>Reporting status</div><div style={{ marginTop: 20, fontSize: 31, lineHeight: 1.22, fontWeight: 780 }}>Verified details are arriving from official sources and field teams.</div></div>
         </div>
-        <LowerThird headline={location.slice(0, 26)} subheadline={source.slice(0, 48)} delay={22} />
+        <LowerThird headline={location.slice(0, 26)} subheadline={source.slice(0, 48)} delay={12} />
       </AbsoluteFill>
     </Sequence>
 
-    <Sequence from={240} durationInFrames={60}>
+    <Sequence from={s5Start} durationInFrames={s5}>
       <AbsoluteFill style={{ transform: `scale(${finalScale})`, transformOrigin: 'center center' }}>
-        <div style={{ position: 'absolute', inset: '84px 130px 105px', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 70, alignItems: 'center' }}><div><BreakingBadge category={category} compact /><KineticTypography text={headline} enterFrame={4} stagger={1} tokenDuration={18} variant="rise" style={{ marginTop: 20, fontSize: 53, lineHeight: 1.08, fontWeight: 850, letterSpacing: '-0.045em', overflowWrap: 'anywhere' }} /><div style={{ marginTop: 24 }}><LiveIndicator date={date} /></div></div><div style={{ height: 350, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.18)' }}><div style={{ width: '100%', height: '100%', transform: 'scale(1.06)' }}><SplitImageReveal src={image} alt={headline} direction="vertical" enterFrame={5} duration={22} accentColor={RED} borderRadius={0} style={{ width: '100%', height: '100%' }} /></div></div></div>
+        <div style={{ position: 'absolute', inset: '84px 130px 105px', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 70, alignItems: 'center' }}><div><BreakingBadge category={category} compact /><KineticTypography text={headline} enterFrame={3} stagger={1} tokenDuration={14} variant="rise" style={{ marginTop: 20, fontSize: 53, lineHeight: 1.08, fontWeight: 850, letterSpacing: '-0.045em', overflowWrap: 'anywhere' }} /><div style={{ marginTop: 24 }}><LiveIndicator date={date} /></div></div><div style={{ height: 350, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.18)' }}><div style={{ width: '100%', height: '100%', transform: 'scale(1.06)' }}><SplitImageReveal src={image} alt={headline} direction="vertical" enterFrame={4} duration={16} accentColor={RED} borderRadius={0} style={{ width: '100%', height: '100%' }} /></div></div></div>
         <NewsTicker text={tickerText} />
       </AbsoluteFill>
     </Sequence>

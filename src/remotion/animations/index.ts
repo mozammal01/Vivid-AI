@@ -294,7 +294,7 @@ export function useBackgroundMovement(
  */
 export function useSceneOpacity(
   durationInFrames: number,
-  fadeFrames = 12,
+  fadeFrames = 5,
 ): number {
   const frame = useCurrentFrame();
   const fadeIn = interpolate(frame, [0, fadeFrames], [0, 1], {

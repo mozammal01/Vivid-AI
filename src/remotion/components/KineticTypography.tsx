@@ -43,8 +43,8 @@ function normalizeWord(word: string): string {
 export const KineticTypography: React.FC<KineticTypographyProps> = ({
   text,
   enterFrame = 0,
-  stagger = 3,
-  tokenDuration = 24,
+  stagger = 2,
+  tokenDuration = 14,
   mode = 'words',
   variant = 'rise',
   highlightWords,

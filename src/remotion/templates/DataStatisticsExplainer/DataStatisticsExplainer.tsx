@@ -13,7 +13,6 @@ import { AnimatedCard } from '@/remotion/animations';
 import { dataStatisticsExplainerDefaultContent } from './defaults';
 import { useResponsiveLayout } from '@/remotion/animations';
 
-const FRAMES_PER_SCENE = 60;
 const FONT = 'Inter, "Helvetica Neue", Arial, sans-serif';
 const finite = (value: unknown, fallback = 0) =>
   typeof value === 'number' && Number.isFinite(value) ? value : fallback;
@@ -47,7 +46,7 @@ function BackgroundGrid({ accent }: { accent: string }) {
 
 function SafeCounter({ value, suffix, start }: { value: number; suffix: string; start: number }) {
   const frame = useCurrentFrame();
-  const count = interpolate(frame, [start, start + 42], [0, value], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) });
+  const count = interpolate(frame, [start, start + 16], [0, value], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic) });
   return <span>{compact(finite(count))}{suffix}</span>;
 }
 
@@ -68,7 +67,7 @@ function LineChart({ data, labels, accent }: { data: number[]; labels: string[];
   }));
   const path = points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ');
   const pathLength = points.slice(1).reduce((sum, point, index) => sum + Math.hypot(point.x - points[index].x, point.y - points[index].y), 0);
-  const progress = interpolate(frame, [8, 51], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic) });
+  const progress = interpolate(frame, [4, 28], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic) });
   const visibleLabels = Math.min(labels.length, 7);
   const labelStep = Math.max(1, Math.ceil(labels.length / Math.max(visibleLabels, 1)));
 
@@ -83,7 +82,7 @@ function LineChart({ data, labels, accent }: { data: number[]; labels: string[];
     <path d={`${path} L ${points[points.length - 1].x} ${chart.y + chart.height} L ${points[0].x} ${chart.y + chart.height} Z`} fill={`${accent}18`} opacity={progress} />
     <path d={path} fill="none" stroke={accent} strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" strokeDasharray={pathLength} strokeDashoffset={pathLength * (1 - progress)} />
     {points.map((point, index) => {
-      const pointProgress = spring({ fps: 30, frame: frame - 22 - index * 4, config: { damping: 14, stiffness: 160 } });
+      const pointProgress = spring({ fps: 30, frame: frame - 12 - index * 2, config: { damping: 14, stiffness: 160 } });
       const label = labels[index];
       const showLabel = Boolean(label) && (index % labelStep === 0 || index === points.length - 1);
       return <g key={`${point.x}-${index}`} opacity={interpolate(pointProgress, [0, 1], [0, 1], { extrapolateRight: 'clamp' })}>
@@ -96,7 +95,7 @@ function LineChart({ data, labels, accent }: { data: number[]; labels: string[];
 
 export const DataStatisticsExplainer: React.FC<ExplainerProps> = (rawProps) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
   const layout = useResponsiveLayout();
   const props = { ...dataStatisticsExplainerDefaultContent, ...rawProps };
   const accent = text(props.brand?.primaryColor, '#38BDF8', 16);
@@ -108,10 +107,12 @@ export const DataStatisticsExplainer: React.FC<ExplainerProps> = (rawProps) => {
   const labels = Array.isArray(props.labels) ? props.labels.map((label) => text(label, '', 12)).slice(0, chartData.length) : [];
   const source = text(props.source, 'Source: Internal analysis', 90);
   const cta = text(props.cta?.text, 'Explore the full report', 40);
-  const cameraScale = interpolate(frame, [0, 300], [1, 1.025], { extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic) });
-  const titleIn = spring({ fps, frame: frame - 8, config: { damping: 16, stiffness: 100 } });
-  const scene = Math.min(4, Math.floor(frame / FRAMES_PER_SCENE));
-  const sceneOpacity = interpolate(frame % FRAMES_PER_SCENE, [0, 12, 48, 60], [0, 1, 1, 0], {
+  const cameraScale = interpolate(frame, [0, durationInFrames], [1, 1.025], { extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic) });
+  const titleIn = spring({ fps, frame: frame - 4, config: { damping: 16, stiffness: 140 } });
+  
+  const framesPerScene = Math.max(1, Math.floor(durationInFrames / 5));
+  const scene = Math.min(4, Math.floor(frame / framesPerScene));
+  const sceneOpacity = interpolate(frame % framesPerScene, [0, 5, framesPerScene - 5, framesPerScene], [0, 1, 1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -134,13 +135,13 @@ export const DataStatisticsExplainer: React.FC<ExplainerProps> = (rawProps) => {
       <div style={{ position: 'absolute', inset: 0, opacity: sceneOpacity }}>
       {scene === 0 && <div style={{ position: 'absolute', inset: 0, padding: `${padY}px ${padX}px`, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         <div style={{ color: accent, fontSize: Math.round(22 * fontScale), fontWeight: 800, letterSpacing: '0.24em', textTransform: 'uppercase', marginBottom: Math.round(26 * fontScale) }}>Data brief</div>
-        <MaskReveal direction="right" enterFrame={6} duration={26}><h1 style={{ margin: 0, maxWidth: Math.min(1350, maxText), fontSize: Math.round(92 * fontScale), lineHeight: 1.02, letterSpacing: '-0.055em', transform: `translateY(${(1 - titleIn) * 38}px)`, overflowWrap: 'anywhere' }}>{title}</h1></MaskReveal>
+        <MaskReveal direction="right" enterFrame={3} duration={14}><h1 style={{ margin: 0, maxWidth: Math.min(1350, maxText), fontSize: Math.round(92 * fontScale), lineHeight: 1.02, letterSpacing: '-0.055em', transform: `translateY(${(1 - titleIn) * 38}px)`, overflowWrap: 'anywhere' }}>{title}</h1></MaskReveal>
         <p style={{ maxWidth: Math.min(1060, maxText), fontSize: Math.round(31 * fontScale), lineHeight: 1.35, color: 'rgba(226,232,240,0.8)', margin: `${Math.round(30 * fontScale)}px 0 0` }}>{subtitle}</p>
       </div>}
       {scene === 1 && <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: Math.round(18 * fontScale) }}>
         <div style={{ color: 'rgba(226,232,240,0.65)', fontSize: Math.round(25 * fontScale), fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Headline statistic</div>
-        <div style={{ fontSize: Math.round(224 * fontScale), lineHeight: 0.96, fontWeight: 850, letterSpacing: '-0.08em', color: accent, textShadow: `0 0 80px ${accent}55` }}><SafeCounter value={statistic} suffix="" start={5} /></div>
-        <div style={{ fontSize: Math.round(42 * fontScale), fontWeight: 700, opacity: interpolate(frame % 60, [9, 28], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) }}><span style={{ color: percentage >= 0 ? '#34D399' : '#FB7185' }}>{percentage >= 0 ? '+' : ''}<SafeCounter value={percentage} suffix="%" start={10} /></span> versus the prior period</div>
+        <div style={{ fontSize: Math.round(224 * fontScale), lineHeight: 0.96, fontWeight: 850, letterSpacing: '-0.08em', color: accent, textShadow: `0 0 80px ${accent}55` }}><SafeCounter value={statistic} suffix="" start={3} /></div>
+        <div style={{ fontSize: Math.round(42 * fontScale), fontWeight: 700, opacity: interpolate(frame % framesPerScene, [4, 16], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) }}><span style={{ color: percentage >= 0 ? '#34D399' : '#FB7185' }}>{percentage >= 0 ? '+' : ''}<SafeCounter value={percentage} suffix="%" start={5} /></span> versus the prior period</div>
       </div>}
       {scene === 2 && <div style={{ position: 'absolute', inset: 0, padding: `${Math.round(98 * fontScale)}px ${Math.round(190 * fontScale)}px ${Math.round(50 * fontScale)}px`, display: 'flex', flexDirection: 'column' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: Math.round(12 * fontScale) }}><div style={{ fontSize: Math.round(42 * fontScale), fontWeight: 800, letterSpacing: '-0.035em' }}>Momentum over time</div><div style={{ fontSize: Math.round(20 * fontScale), color: 'rgba(226,232,240,0.6)' }}>Progressive trend</div></div>
@@ -148,11 +149,11 @@ export const DataStatisticsExplainer: React.FC<ExplainerProps> = (rawProps) => {
       </div>}
       {scene === 3 && <div style={{ position: 'absolute', inset: 0, padding: `${Math.round(160 * fontScale)}px ${Math.round(160 * fontScale)}px`, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         <div style={{ fontSize: Math.round(31 * fontScale), fontWeight: 800, color: accent, letterSpacing: '0.16em', textTransform: 'uppercase', marginBottom: Math.round(26 * fontScale) }}>What the data says</div>
-        <div style={{ display: 'flex', gap: Math.round(28 * fontScale), width: '100%', justifyContent: 'center' }}>{cards.map((card, index) => <AnimatedCard key={card.title} title={card.title} value={card.value} description={card.description} icon={<span style={{ fontSize: Math.round(28 * fontScale) }}>{card.icon}</span>} delay={5 + index * 12} accentColor={index === 2 ? '#A78BFA' : accent} style={{ flex: 1, minWidth: 0, maxWidth: Math.min(500, maxText), height: Math.round(250 * fontScale) }} />)}</div>
+        <div style={{ display: 'flex', gap: Math.round(28 * fontScale), width: '100%', justifyContent: 'center' }}>{cards.map((card, index) => <AnimatedCard key={card.title} title={card.title} value={card.value} description={card.description} icon={<span style={{ fontSize: Math.round(28 * fontScale) }}>{card.icon}</span>} delay={3 + index * 6} accentColor={index === 2 ? '#A78BFA' : accent} style={{ flex: 1, minWidth: 0, maxWidth: Math.min(500, maxText), height: Math.round(250 * fontScale) }} />)}</div>
       </div>}
       {scene === 4 && <div style={{ position: 'absolute', inset: 0, padding: `${Math.round(150 * fontScale)}px ${Math.round(190 * fontScale)}px`, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
         <div style={{ color: accent, fontSize: Math.round(22 * fontScale), fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: Math.round(20 * fontScale) }}>The key insight</div>
-        <MaskReveal direction="up" enterFrame={4} duration={22}><div style={{ maxWidth: Math.min(1350, maxText), fontSize: Math.round(70 * fontScale), fontWeight: 850, letterSpacing: '-0.045em', lineHeight: 1.08 }}>The trend is clear: <span style={{ color: accent }}>{compact(statistic)}</span> is the signal worth acting on.</div></MaskReveal>
+        <MaskReveal direction="up" enterFrame={3} duration={14}><div style={{ maxWidth: Math.min(1350, maxText), fontSize: Math.round(70 * fontScale), fontWeight: 850, letterSpacing: '-0.045em', lineHeight: 1.08 }}>The trend is clear: <span style={{ color: accent }}>{compact(statistic)}</span> is the signal worth acting on.</div></MaskReveal>
         <div style={{ marginTop: Math.round(42 * fontScale), display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}><div style={{ fontSize: Math.round(19 * fontScale), color: 'rgba(226,232,240,0.64)', maxWidth: Math.min(620, maxText), overflowWrap: 'anywhere' }}>{source}</div><div style={{ padding: `${Math.round(18 * fontScale)}px ${Math.round(30 * fontScale)}px`, borderRadius: 999, background: accent, color: '#06101E', fontSize: Math.round(21 * fontScale), fontWeight: 850, boxShadow: `0 14px 42px ${accent}55`, maxWidth: Math.min(460, maxText), overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{cta}</div></div>
       </div>}
       </div>

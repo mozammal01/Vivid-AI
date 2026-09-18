@@ -29,7 +29,7 @@ export const ListItem: React.FC<{
               </div>
               <KineticText 
                 text={item.title} 
-                delay={15} 
+                delay={4} 
                 className="text-6xl font-black text-white uppercase drop-shadow-lg" 
               />
             </AbsoluteFill>

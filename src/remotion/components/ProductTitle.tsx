@@ -14,26 +14,26 @@ export const ProductTitle: React.FC<ProductTitleProps> = ({
   tagline,
   headline,
   primaryColor = '#6366F1',
-  enterFrame = 8,
+  enterFrame = 3,
 }) => {
-  const titleOpacity = useFadeIn({ from: enterFrame, duration: 20 });
-  const titleY = useSpringSlideUp({ from: enterFrame, distance: 40, damping: 16, stiffness: 110 });
+  const titleOpacity = useFadeIn({ from: enterFrame, duration: 10 });
+  const titleY = useSpringSlideUp({ from: enterFrame, distance: 24, damping: 18, stiffness: 140 });
 
-  const taglineOpacity = useFadeIn({ from: enterFrame + 10, duration: 18 });
+  const taglineOpacity = useFadeIn({ from: enterFrame + 4, duration: 10 });
   const taglineY = useSpringSlideUp({
-    from: enterFrame + 10,
-    distance: 30,
-    damping: 16,
-    stiffness: 100,
+    from: enterFrame + 4,
+    distance: 20,
+    damping: 18,
+    stiffness: 130,
   });
 
-  const headlineOpacity = useFadeIn({ from: enterFrame + 18, duration: 16 });
+  const headlineOpacity = useFadeIn({ from: enterFrame + 8, duration: 10 });
   const headlineX = useSpringSlideIn({
-    from: enterFrame + 18,
-    distance: 32,
+    from: enterFrame + 8,
+    distance: 24,
     direction: 'left',
-    damping: 16,
-    stiffness: 100,
+    damping: 18,
+    stiffness: 130,
   });
 
   return (

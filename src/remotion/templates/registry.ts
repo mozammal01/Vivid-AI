@@ -39,14 +39,14 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
     id: 'breaking-news-intro',
     name: 'Breaking News Intro',
     description:
-      'Professional 10-second broadcast news intro with a breaking badge, kinetic headline, location map, animated route, statistic lower third, and final live ticker.',
+      'Professional 15-second broadcast news intro with a breaking badge, kinetic headline, location map, animated route, statistic lower third, and final live ticker.',
     category: 'intro',
     tags: ['breaking-news', 'broadcast', 'news', 'live', 'editorial', 'youtube'],
     thumbnailUrl: '/templates/breaking-news.svg',
     supportedAspectRatios: ['16:9', '1:1', '9:16'],
     defaultAspectRatio: '16:9',
     fps: 30,
-    durationInFrames: 300, // Fixed: 10s @ 30fps
+    durationInFrames: 450, // 15s @ 30fps
     featured: true,
     defaultProps: breakingNewsIntroDefaultContent,
   },
@@ -55,14 +55,14 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
     id: 'top-10-countdown',
     name: 'Top 10 Countdown',
     description:
-      'High-retention YouTube listicle with animated rank counters, image reveals, progress bar, statistics, and fast item-to-item transitions.',
+      'High-retention YouTube listicle with animated rank counters, image reveals, progress bar, statistics, and smooth item-to-item transitions.',
     category: 'social-media',
     tags: ['countdown', 'ranking', 'listicle', 'youtube', 'top-10', 'viral'],
     thumbnailUrl: '/templates/top-10-countdown.svg',
     supportedAspectRatios: ['16:9', '1:1', '9:16'],
     defaultAspectRatio: '16:9',
     fps: 30,
-    durationInFrames: 300, // Fixed: 10s @ 30fps
+    durationInFrames: 450, // 15s @ 30fps
     featured: true,
     defaultProps: top10CountdownDefaultContent,
   },
@@ -74,7 +74,7 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
       'Compact ranking video with animated rank counters, image reveals, and smooth transitions across 5 ranked items.',
     category: 'social-media',
     tags: ['countdown', 'ranking', 'listicle', 'top-5', 'viral'],
-    thumbnailUrl: '/templates/top-5-countdown.svg',
+    thumbnailUrl: '/templates/top-5-countdown.jpg',
     supportedAspectRatios: ['16:9', '1:1', '9:16'],
     defaultAspectRatio: '16:9',
     fps: 30,
@@ -110,7 +110,7 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
     supportedAspectRatios: ['16:9', '1:1', '9:16'],
     defaultAspectRatio: '16:9',
     fps: 30,
-    durationInFrames: 300, // 10s default
+    durationInFrames: 450, // 15s default
     defaultProps: productAdDefaultContent,
   },
 
@@ -125,7 +125,7 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
     supportedAspectRatios: ['16:9', '1:1', '9:16'],
     defaultAspectRatio: '16:9',
     fps: 30,
-    durationInFrames: 300, // 10s default
+    durationInFrames: 450, // 15s default
     defaultProps: restaurantDefaultContent,
   },
 
@@ -140,7 +140,7 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
     supportedAspectRatios: ['16:9', '1:1', '9:16'],
     defaultAspectRatio: '16:9',
     fps: 30,
-    durationInFrames: 300, // 10s default
+    durationInFrames: 450, // 15s default
     defaultProps: saleDefaultContent,
   },
 
@@ -163,14 +163,14 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
     id: 'cinematic-product-showcase',
     name: 'Cinematic Product Showcase',
     description:
-      'Premium 10-second product commercial with cinematic brand reveal, product showcase, key features, pricing, and CTA — built for social/video marketing.',
+      'Premium 15-second product commercial with cinematic brand reveal, product showcase, key features, pricing, and CTA — built for social/video marketing.',
     category: 'ads',
     tags: ['product', 'cinematic', 'premium', 'launch', 'social', 'marketing'],
     thumbnailUrl: '/templates/cinematic-product-showcase.svg',
     supportedAspectRatios: ['16:9', '1:1', '9:16'],
     defaultAspectRatio: '16:9',
     fps: 30,
-    durationInFrames: 300, // 10s
+    durationInFrames: 450, // 15s
     featured: false,
     defaultProps: cinematicProductShowcaseDefaultContent,
   },
@@ -179,14 +179,14 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
     id: 'data-statistics-explainer',
     name: 'Data & Statistics Explainer',
     description:
-      'Professional 10-second data explainer with a headline reveal, animated number, progressive SVG chart, key statistics, and a concise sourced conclusion.',
+      'Professional 20-second data explainer with a headline reveal, animated number, progressive SVG chart, key statistics, and a concise sourced conclusion.',
     category: 'explainer',
     tags: ['data', 'statistics', 'chart', 'business', 'education', 'youtube'],
     thumbnailUrl: '/templates/data-statistics-explainer.svg',
     supportedAspectRatios: ['16:9', '1:1', '9:16'],
     defaultAspectRatio: '16:9',
     fps: 30,
-    durationInFrames: 300, // Fixed: 10s @ 30fps
+    durationInFrames: 600, // 20s @ 30fps
     featured: false,
     defaultProps: dataStatisticsExplainerDefaultContent,
   },
@@ -198,7 +198,7 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
       'Premium 30-second cinematic trailer with dramatic title reveals, parallax visuals, kinetic typography, and a climactic finale — built for movies, documentaries, and major announcements.',
     category: 'intro',
     tags: ['cinematic', 'trailer', 'movie', 'dramatic', 'premium', 'youtube'],
-    thumbnailUrl: '/templates/cinematic-movie-trailer.svg',
+    thumbnailUrl: '/templates/cinematic-movie-trailer.jpg',
     supportedAspectRatios: ['16:9', '1:1', '9:16'],
     defaultAspectRatio: '16:9',
     fps: 30,

@@ -311,8 +311,8 @@ const RankRevealScene: React.FC<Top10CountdownProps & { durationInFrames: number
           {categoryText && (
             <div
               style={{
-                opacity: useFadeIn({ from: 10, duration: 12 }),
-                transform: `scale(${useSpringScale({ from: 10, damping: 14, stiffness: 150 })}`,
+                opacity: useFadeIn({ from: 2, duration: 8 }),
+                transform: `scale(${useSpringScale({ from: 2, damping: 16, stiffness: 160 })}`,
                 alignSelf: 'flex-start',
                 padding: 'clamp(6px, 0.8vh, 10px) clamp(14px, 1.6vw, 22px)',
                 borderRadius: 999,
@@ -330,11 +330,11 @@ const RankRevealScene: React.FC<Top10CountdownProps & { durationInFrames: number
           )}
 
           {/* Title */}
-          <MaskReveal direction="up" enterFrame={14} duration={18}>
+          <MaskReveal direction="up" enterFrame={4} duration={12}>
             <div
               style={{
-                opacity: useFadeIn({ from: 14, duration: 14 }),
-                transform: `translateY(${useSpringSlideUp({ from: 14, distance: 16, damping: 18, stiffness: 120 })}px)`,
+                opacity: useFadeIn({ from: 4, duration: 10 }),
+                transform: `translateY(${useSpringSlideUp({ from: 4, distance: 16, damping: 18, stiffness: 140 })}px)`,
                 fontFamily: 'Georgia, "Times New Roman", Times, serif',
                 fontSize: 'clamp(28px, 3.2vw, 52px)',
                 fontWeight: 400,
@@ -351,8 +351,8 @@ const RankRevealScene: React.FC<Top10CountdownProps & { durationInFrames: number
           {desc && (
             <div
               style={{
-                opacity: useFadeIn({ from: 22, duration: 14 }),
-                transform: `translateY(${useSpringSlideUp({ from: 22, distance: 14, damping: 16, stiffness: 110 })}px)`,
+                opacity: useFadeIn({ from: 6, duration: 10 }),
+                transform: `translateY(${useSpringSlideUp({ from: 6, distance: 14, damping: 18, stiffness: 130 })}px)`,
                 fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                 fontSize: 'clamp(13px, 1vw, 16px)',
                 fontWeight: 500,

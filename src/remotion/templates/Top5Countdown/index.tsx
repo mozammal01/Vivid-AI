@@ -315,8 +315,8 @@ const Item5Scene: React.FC<Top5CountdownProps & { durationInFrames: number }> = 
     easing: Easing.out(Easing.cubic),
   });
 
-  const textSlide = useSpringSlideUp({ from: 20, distance: 30, damping: 18, stiffness: 120 });
-  const textOpacity = useFadeIn({ from: 20, duration: 20 });
+  const textSlide = useSpringSlideUp({ from: 6, distance: 30, damping: 18, stiffness: 140 });
+  const textOpacity = useFadeIn({ from: 6, duration: 10 });
 
   const exitProgress = interpolate(frame, [EXIT_START, durationInFrames], [0, 1], {
     extrapolateLeft: 'clamp',
@@ -329,7 +329,7 @@ const Item5Scene: React.FC<Top5CountdownProps & { durationInFrames: number }> = 
   const rankAnimation = (
     <div
       style={{
-        opacity: interpolate(frame, [0, 10], [0, 1], { extrapolateRight: 'clamp' }),
+        opacity: interpolate(frame, [0, 8], [0, 1], { extrapolateRight: 'clamp' }),
         transform: `translateX(${(1 - rankSpring) * 80}px) scale(${0.5 + rankSpring * 0.5})`,
       }}
     >
@@ -350,8 +350,8 @@ const Item5Scene: React.FC<Top5CountdownProps & { durationInFrames: number }> = 
       <SplitImageReveal
         src={imageUrl}
         alt={title}
-        enterFrame={8}
-        duration={24}
+        enterFrame={4}
+        duration={16}
         accentColor={GOLD}
         borderRadius={16}
       />
@@ -359,7 +359,7 @@ const Item5Scene: React.FC<Top5CountdownProps & { durationInFrames: number }> = 
   );
 
   const textAnimation = (
-    <MaskReveal direction="up" enterFrame={20} duration={16}>
+    <MaskReveal direction="up" enterFrame={6} duration={12}>
       <div
         style={{
           opacity: textOpacity,

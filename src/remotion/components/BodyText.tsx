@@ -16,20 +16,20 @@ export interface BodyTextProps {
 export const BodyText: React.FC<BodyTextProps> = ({
   text,
   primaryColor = '#6366F1',
-  enterFrame = 14,
+  enterFrame = 4,
   fontSize = 32,
 }) => {
-  const opacity = useFadeIn({ from: enterFrame, duration: 20 });
+  const opacity = useFadeIn({ from: enterFrame, duration: 10 });
   const translateY = useSpringSlideUp({
     from: enterFrame,
-    distance: 28,
-    damping: 16,
-    stiffness: 100,
+    distance: 20,
+    damping: 18,
+    stiffness: 140,
   });
   const scale = useSpringScale({
     from: enterFrame,
-    damping: 16,
-    stiffness: 110,
+    damping: 18,
+    stiffness: 150,
   });
 
   return (

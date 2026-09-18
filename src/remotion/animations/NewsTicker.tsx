@@ -10,8 +10,8 @@ export const NewsTicker: React.FC<{
   // Combine into one long string separated by bullet points
   const tickerText = headlines.join('   •   ') + '   •   ' + headlines.join('   •   ');
   
-  // Continuous scroll (120 pixels per second)
-  const scrollSpeedPerSecond = 120;
+  // Continuous scroll (60 pixels per second for easy reading)
+  const scrollSpeedPerSecond = 60;
   const translateX = -(((frame / fps) * scrollSpeedPerSecond) % 3000); // arbitrary large modulo to loop
 
   return (
