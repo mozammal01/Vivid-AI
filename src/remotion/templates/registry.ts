@@ -14,6 +14,11 @@ import { cinematicProductShowcaseDefaultContent } from './CinematicProductShowca
 import { dataStatisticsExplainerDefaultContent } from './DataStatisticsExplainer/defaults';
 import { breakingNewsIntroDefaultContent } from './BreakingNewsIntro/defaults';
 import { cinematicMovieTrailerDefaultContent } from './CinematicMovieTrailer/defaults';
+import { fashionLookbookDefaultContent } from './FashionLookbook/defaults';
+import { podcastHighlightDefaultContent } from './PodcastHighlight/defaults';
+import { techProductLaunchDefaultContent } from './TechProductLaunch/defaults';
+import { realEstateShowcaseDefaultContent } from './RealEstateShowcase/defaults';
+import { fitnessMotivationDefaultContent } from './FitnessMotivation/defaults';
 
 /**
  * Template Registry
@@ -205,6 +210,86 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
     durationInFrames: 900, // Fixed: 30s @ 30fps
     featured: true,
     defaultProps: cinematicMovieTrailerDefaultContent,
+  },
+
+  'fashion-lookbook': {
+    id: 'fashion-lookbook',
+    name: 'Fashion Lookbook',
+    description:
+      'Editorial luxury lookbook featuring serif typography, outfit highlights, soft light sweeps, and collection lockup.',
+    category: 'social-media',
+    tags: ['fashion', 'editorial', 'lookbook', 'luxury', 'apparel', 'style', 'instagram'],
+    thumbnailUrl: '/templates/fashion-lookbook.jpg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '9:16',
+    fps: 30,
+    durationInFrames: 450, // 15s @ 30fps
+    featured: true,
+    defaultProps: fashionLookbookDefaultContent,
+  },
+
+  'podcast-highlight': {
+    id: 'podcast-highlight',
+    name: 'Podcast Highlight',
+    description:
+      'Engaging 15-second audio/video snippet with animated waveform, speaker lower-third, kinetic quote text, and episode CTA.',
+    category: 'social-media',
+    tags: ['podcast', 'interview', 'waveform', 'quote', 'audio', 'social-media'],
+    thumbnailUrl: '/templates/podcast-highlight.jpg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '9:16',
+    fps: 30,
+    durationInFrames: 450, // 15s @ 30fps
+    featured: true,
+    defaultProps: podcastHighlightDefaultContent,
+  },
+
+  'tech-product-launch': {
+    id: 'tech-product-launch',
+    name: 'Tech Product Launch',
+    description:
+      'Futuristic SaaS/Tech promo with dynamic matrix grid, terminal code typing effect, benchmark spec pills, and developer CTA.',
+    category: 'ads',
+    tags: ['tech', 'saas', 'developer', 'code', 'product-launch', 'futuristic'],
+    thumbnailUrl: '/templates/tech-product-launch.jpg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450, // 15s @ 30fps
+    featured: true,
+    defaultProps: techProductLaunchDefaultContent,
+  },
+
+  'real-estate-showcase': {
+    id: 'real-estate-showcase',
+    name: 'Real Estate Showcase',
+    description:
+      'Elegant architectural showcase with glassmorphism spec grid, price spotlight, property reveal, and agent contact card.',
+    category: 'ads',
+    tags: ['real-estate', 'property', 'architecture', 'luxury-home', 'realtor', 'tour'],
+    thumbnailUrl: '/templates/real-estate-showcase.jpg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450, // 15s @ 30fps
+    featured: false,
+    defaultProps: realEstateShowcaseDefaultContent,
+  },
+
+  'fitness-motivation': {
+    id: 'fitness-motivation',
+    name: 'Fitness Motivation',
+    description:
+      'High-energy workout/supplement promo featuring giant kinetic typography, stat counter spotlight, formula highlights, and intense call to action.',
+    category: 'social-media',
+    tags: ['fitness', 'gym', 'workout', 'motivation', 'supplements', 'sports'],
+    thumbnailUrl: '/templates/fitness-motivation.jpg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '9:16',
+    fps: 30,
+    durationInFrames: 450, // 15s @ 30fps
+    featured: false,
+    defaultProps: fitnessMotivationDefaultContent,
   },
 };
 

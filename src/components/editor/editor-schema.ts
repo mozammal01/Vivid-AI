@@ -88,6 +88,14 @@ export const editorFormSchema = z.object({
   year: z.string().max(10, "Year must be 10 characters or fewer"),
   accentText: z.string().max(60, "Accent text must be 60 characters or fewer"),
   bodyText: z.string().max(200, "Body text must be 200 characters or fewer"),
+  codeSnippet: z.string().optional(),
+  version: z.string().optional(),
+  speaker: z.string().optional(),
+  episodeNumber: z.string().optional(),
+  agentName: z.string().optional(),
+  agentPhone: z.string().optional(),
+  statNumber: z.string().optional(),
+  statLabel: z.string().optional(),
 });
 
 export type EditorFormValues = z.infer<typeof editorFormSchema>;
@@ -106,6 +114,11 @@ export const FIXED_DURATION_TEMPLATES = [
   'cinematic-documentary',
   'cinematic-product-showcase',
   'cinematic-movie-trailer',
+  'fashion-lookbook',
+  'podcast-highlight',
+  'tech-product-launch',
+  'real-estate-showcase',
+  'fitness-motivation',
 ] as const;
 
 export const ASPECT_OPTIONS = [
@@ -152,6 +165,14 @@ export const defaultEditorValues: EditorFormValues = {
   year: "",
   accentText: "",
   bodyText: demoVideoContent.bodyText ?? "",
+  codeSnippet: "",
+  version: "",
+  speaker: "",
+  episodeNumber: "",
+  agentName: "",
+  agentPhone: "",
+  statNumber: "",
+  statLabel: "",
 };
 
 export function parseEditorForm(values: EditorFormValues): {

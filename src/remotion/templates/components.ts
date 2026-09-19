@@ -12,6 +12,11 @@ import { CinematicProductShowcase } from './CinematicProductShowcase';
 import { DataStatisticsExplainer } from './DataStatisticsExplainer';
 import { BreakingNewsIntro } from './BreakingNewsIntro';
 import { CinematicMovieTrailer } from './CinematicMovieTrailer';
+import { FashionLookbook } from './FashionLookbook';
+import { PodcastHighlight } from './PodcastHighlight';
+import { TechProductLaunch } from './TechProductLaunch';
+import { RealEstateShowcase } from './RealEstateShowcase';
+import { FitnessMotivation } from './FitnessMotivation';
 
 /**
  * Maps template IDs to their Remotion composition components.
@@ -38,6 +43,11 @@ export const templateComponents: Record<
   'cinematic-product-showcase': CinematicProductShowcase,
   'data-statistics-explainer': DataStatisticsExplainer,
   'cinematic-movie-trailer': CinematicMovieTrailer,
+  'fashion-lookbook': FashionLookbook,
+  'podcast-highlight': PodcastHighlight,
+  'tech-product-launch': TechProductLaunch,
+  'real-estate-showcase': RealEstateShowcase,
+  'fitness-motivation': FitnessMotivation,
 };
 
 /** Returns the Remotion composition component for a registered template ID. */

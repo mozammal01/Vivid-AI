@@ -14,7 +14,12 @@ export type TemplateId =
   | 'cinematic-product-showcase'
   | 'data-statistics-explainer'
   | 'breaking-news-intro'
-  | 'cinematic-movie-trailer';
+  | 'cinematic-movie-trailer'
+  | 'fashion-lookbook'
+  | 'podcast-highlight'
+  | 'tech-product-launch'
+  | 'real-estate-showcase'
+  | 'fitness-motivation';
 
 /**
  * Serializable template metadata — everything the app needs to know about a

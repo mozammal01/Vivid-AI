@@ -185,6 +185,69 @@ const top5CountdownFields: TemplateFieldDefinition[] = [
   { key: 'ctaText', label: 'CTA Text', type: 'text', required: false, placeholder: 'e.g. Watch Full List', section: 'Call to Action', defaultValue: 'Watch Full List' },
 ];
 
+const fashionLookbookFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Brand Name', type: 'text', required: true, placeholder: 'e.g. Maison Noir', section: 'Brand', defaultValue: 'Maison Noir' },
+  { key: 'tagline', label: 'Collection / Season', type: 'text', required: false, placeholder: 'e.g. Autumn / Winter Collection', section: 'Brand' },
+  { key: 'productName', label: 'Look Title', type: 'text', required: true, placeholder: 'e.g. Velvet Atelier Coat', section: 'Lookbook', defaultValue: 'Velvet Atelier Coat' },
+  { key: 'description', label: 'Description', type: 'textarea', required: false, placeholder: 'Fabric & cut details', section: 'Lookbook' },
+  { key: 'productImageUrl', label: 'Outfit Image', type: 'image', required: false, section: 'Media', imageLabel: 'Outfit photo' },
+  { key: 'price', label: 'Price', type: 'text', required: false, placeholder: '$890', section: 'Details' },
+  { key: 'feature1', label: 'Craftsmanship 1', type: 'text', required: false, placeholder: 'e.g. 100% Cashmere', section: 'Features' },
+  { key: 'feature2', label: 'Craftsmanship 2', type: 'text', required: false, placeholder: 'e.g. Tailored Fit', section: 'Features' },
+  { key: 'feature3', label: 'Craftsmanship 3', type: 'text', required: false, placeholder: 'e.g. Limited Edition', section: 'Features' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. Explore Lookbook', section: 'Call to Action', defaultValue: 'Explore Lookbook' },
+];
+
+const podcastHighlightFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Show Name', type: 'text', required: true, placeholder: 'e.g. The Tech Vision Podcast', section: 'Show', defaultValue: 'The Tech Vision Podcast' },
+  { key: 'headline', label: 'Quote / Highlight', type: 'textarea', required: true, placeholder: 'Key quote from episode', section: 'Content' },
+  { key: 'speaker', label: 'Guest Speaker', type: 'text', required: false, placeholder: 'e.g. Dr. Elena Vance', section: 'Content' },
+  { key: 'episodeNumber', label: 'Episode Badge', type: 'text', required: false, placeholder: 'e.g. EP. 142', section: 'Show' },
+  { key: 'productImageUrl', label: 'Cover / Guest Photo', type: 'image', required: false, section: 'Media', imageLabel: 'Cover image' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. Listen Full Episode', section: 'Call to Action', defaultValue: 'Listen Full Episode' },
+];
+
+const techProductLaunchFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Brand Name', type: 'text', required: true, placeholder: 'e.g. Nexus AI', section: 'Brand', defaultValue: 'Nexus AI' },
+  { key: 'productName', label: 'Product Name', type: 'text', required: true, placeholder: 'e.g. Nexus Engine', section: 'Product', defaultValue: 'Nexus Engine' },
+  { key: 'headline', label: 'Tagline', type: 'text', required: false, placeholder: 'e.g. Autonomous Agent Framework', section: 'Product' },
+  { key: 'version', label: 'Version Badge', type: 'text', required: false, placeholder: 'e.g. v4.0 RELEASE', section: 'Product' },
+  { key: 'codeSnippet', label: 'Code Snippet', type: 'textarea', required: false, placeholder: 'Terminal code snippet', section: 'Code' },
+  { key: 'productImageUrl', label: 'Product Visual', type: 'image', required: false, section: 'Media', imageLabel: 'Product UI' },
+  { key: 'price', label: 'Pricing Plan', type: 'text', required: false, placeholder: 'e.g. Free Tier Available', section: 'Pricing' },
+  { key: 'feature1', label: 'Benchmark 1', type: 'text', required: false, placeholder: 'e.g. 10x Faster Execution', section: 'Specs' },
+  { key: 'feature2', label: 'Benchmark 2', type: 'text', required: false, placeholder: 'e.g. Zero-Latency Streaming', section: 'Specs' },
+  { key: 'feature3', label: 'Benchmark 3', type: 'text', required: false, placeholder: 'e.g. Enterprise Security', section: 'Specs' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. Deploy in 60 Seconds', section: 'Call to Action', defaultValue: 'Deploy in 60 Seconds' },
+];
+
+const realEstateShowcaseFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Agency Name', type: 'text', required: true, placeholder: 'e.g. Aura Estates', section: 'Agency', defaultValue: 'Aura Estates' },
+  { key: 'productName', label: 'Property Title', type: 'text', required: true, placeholder: 'e.g. The Grand View Villa', section: 'Property', defaultValue: 'The Grand View Villa' },
+  { key: 'location', label: 'Location', type: 'text', required: false, placeholder: 'e.g. Beverly Hills, CA', section: 'Property' },
+  { key: 'price', label: 'Listing Price', type: 'text', required: true, placeholder: '$4,250,000', section: 'Pricing', defaultValue: '$4,250,000' },
+  { key: 'agentName', label: 'Agent Name', type: 'text', required: false, placeholder: 'e.g. Sarah Jenkins', section: 'Agent' },
+  { key: 'agentPhone', label: 'Agent Phone', type: 'text', required: false, placeholder: 'e.g. +1 (800) 555-REAL', section: 'Agent' },
+  { key: 'productImageUrl', label: 'Hero Image', type: 'image', required: false, section: 'Media', imageLabel: 'Property photo' },
+  { key: 'feature1', label: 'Amenity 1', type: 'text', required: false, placeholder: 'e.g. 5 Beds & 6 Baths', section: 'Amenities' },
+  { key: 'feature2', label: 'Amenity 2', type: 'text', required: false, placeholder: 'e.g. 6,400 Sq Ft', section: 'Amenities' },
+  { key: 'feature3', label: 'Amenity 3', type: 'text', required: false, placeholder: 'e.g. Infinity Pool', section: 'Amenities' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. Schedule Private Tour', section: 'Call to Action', defaultValue: 'Schedule Private Tour' },
+];
+
+const fitnessMotivationFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Brand Name', type: 'text', required: true, placeholder: 'e.g. Iron Athletics', section: 'Brand', defaultValue: 'Iron Athletics' },
+  { key: 'headline', label: 'Kinetic Headline', type: 'text', required: true, placeholder: 'e.g. NO LIMITS. NO EXCUSES.', section: 'Headline', defaultValue: 'NO LIMITS. NO EXCUSES.' },
+  { key: 'productName', label: 'Product Name', type: 'text', required: false, placeholder: 'e.g. HYPERDRIVE PRE-WORKOUT', section: 'Product' },
+  { key: 'statNumber', label: 'Stat Number', type: 'text', required: false, placeholder: 'e.g. 100%', section: 'Spotlight' },
+  { key: 'statLabel', label: 'Stat Label', type: 'text', required: false, placeholder: 'e.g. PURE PERFORMANCE', section: 'Spotlight' },
+  { key: 'productImageUrl', label: 'Product Image', type: 'image', required: false, section: 'Media', imageLabel: 'Product photo' },
+  { key: 'feature1', label: 'Formula Spec 1', type: 'text', required: false, placeholder: 'e.g. 350mg Caffeine', section: 'Formula' },
+  { key: 'feature2', label: 'Formula Spec 2', type: 'text', required: false, placeholder: 'e.g. 6g Citrulline Malate', section: 'Formula' },
+  { key: 'feature3', label: 'Formula Spec 3', type: 'text', required: false, placeholder: 'e.g. Zero Sugar', section: 'Formula' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. Claim 20% Off Now', section: 'Call to Action', defaultValue: 'Claim 20% Off Now' },
+];
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Registry
 // ─────────────────────────────────────────────────────────────────────────────
@@ -201,6 +264,11 @@ export const templateFieldConfigs: Record<TemplateId, TemplateFieldDefinition[]>
   'top-10-countdown': top10CountdownFields,
   'top-5-countdown': top5CountdownFields,
   'cinematic-movie-trailer': cinematicMovieTrailerFields,
+  'fashion-lookbook': fashionLookbookFields,
+  'podcast-highlight': podcastHighlightFields,
+  'tech-product-launch': techProductLaunchFields,
+  'real-estate-showcase': realEstateShowcaseFields,
+  'fitness-motivation': fitnessMotivationFields,
 };
 
 /** Returns the field configuration for a template, or an empty array if unknown. */
