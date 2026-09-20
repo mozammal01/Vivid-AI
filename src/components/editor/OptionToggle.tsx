@@ -4,6 +4,7 @@ interface OptionToggleOption<T extends string> {
   value: T;
   label: string;
   hint?: string;
+  disabled?: boolean;
 }
 
 interface OptionToggleProps<T extends string> {
@@ -36,11 +37,14 @@ export function OptionToggle<T extends string>({
           <button
             key={option.value}
             type="button"
-            onClick={() => onChange(option.value)}
+            disabled={option.disabled}
+            onClick={() => !option.disabled && onChange(option.value)}
             aria-pressed={value === option.value}
             className={cn(
               "flex flex-col items-center gap-0.5 rounded-lg border px-2 py-2 text-xs font-medium transition-colors",
-              value === option.value
+              option.disabled
+                ? "opacity-40 cursor-not-allowed border-border bg-muted/40 text-muted-foreground"
+                : value === option.value
                 ? "border-primary bg-primary/10 text-primary"
                 : "border-border bg-background text-muted-foreground hover:bg-muted"
             )}

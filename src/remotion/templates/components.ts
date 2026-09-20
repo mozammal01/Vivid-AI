@@ -17,6 +17,11 @@ import { PodcastHighlight } from './PodcastHighlight';
 import { TechProductLaunch } from './TechProductLaunch';
 import { RealEstateShowcase } from './RealEstateShowcase';
 import { FitnessMotivation } from './FitnessMotivation';
+import { GamingStreamHighlight } from './GamingStreamHighlight';
+import { YouTubeShortsViralHook } from './YouTubeShortsViralHook';
+import { TechTutorialExplainer } from './TechTutorialExplainer';
+import { YouTubeVlogIntro } from './YouTubeVlogIntro';
+import { FinanceCryptoExplainer } from './FinanceCryptoExplainer';
 
 /**
  * Maps template IDs to their Remotion composition components.
@@ -48,6 +53,11 @@ export const templateComponents: Record<
   'tech-product-launch': TechProductLaunch,
   'real-estate-showcase': RealEstateShowcase,
   'fitness-motivation': FitnessMotivation,
+  'gaming-stream-highlight': GamingStreamHighlight,
+  'youtube-shorts-viral-hook': YouTubeShortsViralHook,
+  'tech-tutorial-explainer': TechTutorialExplainer,
+  'youtube-vlog-intro': YouTubeVlogIntro,
+  'finance-crypto-explainer': FinanceCryptoExplainer,
 };
 
 /** Returns the Remotion composition component for a registered template ID. */

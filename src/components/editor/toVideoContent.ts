@@ -197,6 +197,42 @@ export function toVideoContent(
         },
       };
     }
+    case 'gaming-stream-highlight': {
+      return {
+        ...content,
+        gamerTag: values.headline.trim() || 'SHADOW_NEXUS',
+        score: '99,450 XP',
+        gameName: values.productName.trim() || 'VALORANT PRO LEAGUE',
+      };
+    }
+    case 'youtube-shorts-viral-hook': {
+      return {
+        ...content,
+        headline: values.headline.trim() || 'STOP SCROLLING! THIS CHANGES EVERYTHING 🚀',
+        audioWaveformText: values.title.trim() || 'AUDIO INSIGHT PRO',
+      };
+    }
+    case 'tech-tutorial-explainer': {
+      return {
+        ...content,
+        codeSnippet: values.codeSnippet || `// initialize video worker pipeline\nconst task = await renderMedia({\n  composition: 'TechTutorial',\n  inputProps: { theme: 'dark' }\n});`,
+        versionBadge: values.version || 'v4.2 FULL GUIDE',
+      };
+    }
+    case 'youtube-vlog-intro': {
+      return {
+        ...content,
+        locationStamp: values.location.trim() || 'TOKYO, JAPAN 35.6762° N',
+        seasonTag: 'SEASON 4 • EP. 12',
+      };
+    }
+    case 'finance-crypto-explainer': {
+      return {
+        ...content,
+        marketTicker: values.tickerText.trim() || 'BTC $95.4K (+4.2%) • ETH $3.8K (+6.1%) • SOL $210 (+8.4%)',
+        growthStat: '+14.8%',
+      };
+    }
     default:
       return content;
   }

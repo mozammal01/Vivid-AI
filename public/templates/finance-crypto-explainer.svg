@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <rect width="400" height="250" fill="#0B132B"/>
+  <rect x="120" y="25" width="160" height="22" rx="11" fill="#10B981" fill-opacity="0.2" stroke="#10B981" stroke-width="1"/>
+  <text x="200" y="39" text-anchor="middle" fill="#10B981" font-family="system-ui, sans-serif" font-size="9" font-weight="800">📈 MARKET BRIEFING • Q3</text>
+  <text x="200" y="68" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="18" font-weight="900">CAPITAL INSIGHTS</text>
+  <text x="200" y="88" text-anchor="middle" fill="#EAB308" font-family="system-ui, sans-serif" font-size="11" font-weight="700">BITCOIN SURGES PAST $95,000 🚀</text>
+  <rect x="50" y="102" width="300" height="85" rx="8" fill="#1C2541" stroke="#10B981" stroke-width="1"/>
+  <path d="M 60,170 Q 140,150 200,120 T 340,110" fill="none" stroke="#10B981" stroke-width="3"/>
+  <rect x="285" y="112" width="55" height="18" rx="4" fill="#10B981"/>
+  <text x="312" y="125" text-anchor="middle" fill="#0B132B" font-family="system-ui, sans-serif" font-size="9" font-weight="900">+14.8%</text>
+  <rect x="110" y="200" width="180" height="26" rx="4" fill="#10B981"/>
+  <text x="200" y="217" text-anchor="middle" fill="#0B132B" font-family="system-ui, sans-serif" font-size="10" font-weight="900">SUBSCRIBE FOR MARKET ALERTS 📊</text>
+</svg>

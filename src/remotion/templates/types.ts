@@ -19,7 +19,12 @@ export type TemplateId =
   | 'podcast-highlight'
   | 'tech-product-launch'
   | 'real-estate-showcase'
-  | 'fitness-motivation';
+  | 'fitness-motivation'
+  | 'gaming-stream-highlight'
+  | 'youtube-shorts-viral-hook'
+  | 'tech-tutorial-explainer'
+  | 'youtube-vlog-intro'
+  | 'finance-crypto-explainer';
 
 /**
  * Serializable template metadata — everything the app needs to know about a
@@ -48,6 +53,8 @@ export interface TemplateMetadata {
   fps: SupportedFps;
   /** Default composition duration in frames (at `fps`). */
   durationInFrames: number;
+  /** Duration presets supported by this template ('10' | '15' | '30'). Defaults to all if omitted. */
+  supportedDurations?: ('10' | '15' | '30')[];
   /** Whether this template appears in the Featured section. */
   featured?: boolean;
   /** Default input props used for previews and new projects. */

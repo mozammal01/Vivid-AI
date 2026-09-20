@@ -19,6 +19,11 @@ import { podcastHighlightDefaultContent } from './PodcastHighlight/defaults';
 import { techProductLaunchDefaultContent } from './TechProductLaunch/defaults';
 import { realEstateShowcaseDefaultContent } from './RealEstateShowcase/defaults';
 import { fitnessMotivationDefaultContent } from './FitnessMotivation/defaults';
+import { gamingStreamHighlightDefaultContent } from './GamingStreamHighlight/defaults';
+import { youtubeShortsViralHookDefaultContent } from './YouTubeShortsViralHook/defaults';
+import { techTutorialExplainerDefaultContent } from './TechTutorialExplainer/defaults';
+import { youtubeVlogIntroDefaultContent } from './YouTubeVlogIntro/defaults';
+import { financeCryptoExplainerDefaultContent } from './FinanceCryptoExplainer/defaults';
 
 /**
  * Template Registry
@@ -290,6 +295,86 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
     durationInFrames: 450, // 15s @ 30fps
     featured: false,
     defaultProps: fitnessMotivationDefaultContent,
+  },
+
+  'gaming-stream-highlight': {
+    id: 'gaming-stream-highlight',
+    name: 'Gaming & Esports Highlight',
+    description:
+      'High-octane gaming clip template with animated gamer tag, neon HUD overlays, kill streak/score counter, and energetic YouTube subscribe CTA.',
+    category: 'social-media',
+    tags: ['gaming', 'esports', 'twitch', 'stream', 'valorant', 'youtube', 'viral'],
+    thumbnailUrl: '/templates/gaming-stream-highlight.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: gamingStreamHighlightDefaultContent,
+  },
+
+  'youtube-shorts-viral-hook': {
+    id: 'youtube-shorts-viral-hook',
+    name: 'YouTube Shorts Viral Hook',
+    description:
+      'Ultra-engaging vertical format tailored for YouTube Shorts with curiosity-gap kinetic title hook, animated audio waveform, key takeaway popups, and instant subscribe pulse.',
+    category: 'social-media',
+    tags: ['youtube-shorts', 'shorts', 'reels', 'viral', 'hook', 'growth'],
+    thumbnailUrl: '/templates/youtube-shorts-viral-hook.svg',
+    supportedAspectRatios: ['9:16', '16:9', '1:1'],
+    defaultAspectRatio: '9:16',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeShortsViralHookDefaultContent,
+  },
+
+  'tech-tutorial-explainer': {
+    id: 'tech-tutorial-explainer',
+    name: 'Tech & Code Tutorial Explainer',
+    description:
+      'Clean developer-focused video template featuring code window reveals, step-by-step terminal cards, feature highlight tags, and sleek call-to-action end cards.',
+    category: 'tutorial',
+    tags: ['coding', 'developer', 'tutorial', 'tech', 'software', 'youtube'],
+    thumbnailUrl: '/templates/tech-tutorial-explainer.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: techTutorialExplainerDefaultContent,
+  },
+
+  'youtube-vlog-intro': {
+    id: 'youtube-vlog-intro',
+    name: 'YouTube Travel & Vlog Intro',
+    description:
+      'Aesthetic, atmospheric channel opener with cinematic polaroid photo frames, location/stamp lower third, chapter timeline preview, and channel branding end screen.',
+    category: 'intro',
+    tags: ['vlog', 'travel', 'lifestyle', 'intro', 'aesthetic', 'youtube'],
+    thumbnailUrl: '/templates/youtube-vlog-intro.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeVlogIntroDefaultContent,
+  },
+
+  'finance-crypto-explainer': {
+    id: 'finance-crypto-explainer',
+    name: 'Finance & Crypto Market Update',
+    description:
+      'High-impact financial news and stock/crypto update template with animated candlestick/line chart, market stat badges, risk indicator ticker, and channel disclaimer.',
+    category: 'explainer',
+    tags: ['finance', 'crypto', 'stocks', 'bitcoin', 'trading', 'youtube', 'explainer'],
+    thumbnailUrl: '/templates/finance-crypto-explainer.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: financeCryptoExplainerDefaultContent,
   },
 };
 

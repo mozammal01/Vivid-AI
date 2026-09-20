@@ -80,6 +80,17 @@ export const videoContentSchema = z.object({
   description: z.string().optional(),
   statisticLabel: z.string().optional(),
   year: z.string().optional(),
+  /** Optional YouTube template fields. Existing templates safely ignore these. */
+  gamerTag: z.string().optional(),
+  score: z.string().optional(),
+  gameName: z.string().optional(),
+  audioWaveformText: z.string().optional(),
+  codeSnippet: z.string().optional(),
+  versionBadge: z.string().optional(),
+  locationStamp: z.string().optional(),
+  seasonTag: z.string().optional(),
+  marketTicker: z.string().optional(),
+  growthStat: z.string().optional(),
 });
 
 /** Input props type for every template composition. */

@@ -168,6 +168,12 @@ export function CreateVideoEditor() {
       if (!template.supportedAspectRatios.includes(prev.aspectRatio)) {
         next.aspectRatio = template.defaultAspectRatio;
       }
+      if (
+        template.supportedDurations &&
+        !template.supportedDurations.includes(prev.duration as any)
+      ) {
+        next.duration = template.supportedDurations[0] as any;
+      }
       return next;
     });
     setStatus("idle");
@@ -195,6 +201,16 @@ export function CreateVideoEditor() {
   const aspectOptions = ASPECT_OPTIONS.filter((option) =>
     activeTemplate?.supportedAspectRatios.includes(option.value)
   );
+  const durationOptions = DURATION_OPTIONS.map((option) => {
+    const isSupported = activeTemplate?.supportedDurations
+      ? activeTemplate.supportedDurations.includes(option.value as any)
+      : true;
+    return {
+      ...option,
+      disabled: !isSupported,
+      hint: !isSupported ? "Unavailable" : undefined,
+    };
+  });
 
   return (
     <div className="space-y-6">
@@ -333,7 +349,7 @@ export function CreateVideoEditor() {
               <OptionToggle
                 label="Duration"
                 value={values.duration}
-                options={DURATION_OPTIONS}
+                options={durationOptions}
                 onChange={(value) => updateField("duration", value)}
                 error={errors.duration}
               />

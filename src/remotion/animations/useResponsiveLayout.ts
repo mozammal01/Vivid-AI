@@ -31,6 +31,14 @@ export interface ResponsiveLayout {
   horizontalLayout: boolean;
   /** Base font size scale factor (relative to 16:9). */
   fontScale: number;
+  /** Responsive title font size in pixels. */
+  titleFontSize: number;
+  /** Responsive subtitle font size in pixels. */
+  subtitleFontSize: number;
+  /** Responsive body font size in pixels. */
+  bodyFontSize: number;
+  /** Responsive button font size in pixels. */
+  buttonFontSize: number;
   /** Whether the canvas is tall and narrow (9:16). */
   isPortrait: boolean;
   /** Whether the canvas is square (1:1). */
@@ -99,6 +107,11 @@ export function useResponsiveLayout(): ResponsiveLayout {
   const horizontalLayout = isLandscape || isSquare;
   const fontScale = clamp(scale * (isPortrait ? 0.85 : isSquare ? 0.9 : 1), 0.6, 1.3);
 
+  const titleFontSize = Math.round(52 * fontScale);
+  const subtitleFontSize = Math.round(28 * fontScale);
+  const bodyFontSize = Math.round(20 * fontScale);
+  const buttonFontSize = Math.round(22 * fontScale);
+
   return {
     mode,
     width,
@@ -112,6 +125,10 @@ export function useResponsiveLayout(): ResponsiveLayout {
     maxImageHeight,
     horizontalLayout,
     fontScale,
+    titleFontSize,
+    subtitleFontSize,
+    bodyFontSize,
+    buttonFontSize,
     isPortrait,
     isSquare,
     isLandscape,
