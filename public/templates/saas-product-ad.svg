@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <rect width="400" height="250" fill="#0B0F19"/>
+  <circle cx="200" cy="100" r="120" fill="#3B82F6" opacity="0.15"/>
+  <text x="200" y="45" text-anchor="middle" fill="#3B82F6" font-family="system-ui, sans-serif" font-size="12" font-weight="800" letter-spacing="2">PULSE AI PLATFORM</text>
+  <text x="200" y="70" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="16" font-weight="900">NEXT-GEN SAAS DASHBOARD</text>
+  <rect x="60" y="90" width="280" height="95" rx="10" fill="#111827" stroke="#3B82F6" stroke-width="1.5"/>
+  <path d="M 80 160 Q 150 120 200 140 T 320 110" fill="none" stroke="#06B6D4" stroke-width="3"/>
+  <rect x="120" y="200" width="160" height="26" rx="13" fill="#3B82F6"/>
+  <text x="200" y="217" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10" font-weight="900">START 14-DAY TRIAL ⚡</text>
+</svg>

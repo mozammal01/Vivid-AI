@@ -91,6 +91,9 @@ export const videoContentSchema = z.object({
   seasonTag: z.string().optional(),
   marketTicker: z.string().optional(),
   growthStat: z.string().optional(),
+  /** Optional event & masterclass fields. Existing templates safely ignore these. */
+  speakerName: z.string().optional(),
+  eventDate: z.string().optional(),
 });
 
 /** Input props type for every template composition. */

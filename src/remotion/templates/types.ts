@@ -24,7 +24,12 @@ export type TemplateId =
   | 'youtube-shorts-viral-hook'
   | 'tech-tutorial-explainer'
   | 'youtube-vlog-intro'
-  | 'finance-crypto-explainer';
+  | 'finance-crypto-explainer'
+  | 'creative-portfolio-showcase'
+  | 'saas-product-ad'
+  | 'course-masterclass-promo'
+  | 'ecommerce-flash-sale'
+  | 'event-webinar-teaser';
 
 /**
  * Serializable template metadata — everything the app needs to know about a

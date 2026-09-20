@@ -96,6 +96,8 @@ export const editorFormSchema = z.object({
   agentPhone: z.string().optional(),
   statNumber: z.string().optional(),
   statLabel: z.string().optional(),
+  speakerName: z.string().optional(),
+  eventDate: z.string().optional(),
 });
 
 export type EditorFormValues = z.infer<typeof editorFormSchema>;
@@ -173,6 +175,8 @@ export const defaultEditorValues: EditorFormValues = {
   agentPhone: "",
   statNumber: "",
   statLabel: "",
+  speakerName: "",
+  eventDate: "",
 };
 
 export function parseEditorForm(values: EditorFormValues): {

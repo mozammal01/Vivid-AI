@@ -304,6 +304,72 @@ const financeCryptoExplainerFields: TemplateFieldDefinition[] = [
   { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE FOR DAILY ALERTS 📊', section: 'Call to Action', defaultValue: 'SUBSCRIBE FOR DAILY MARKET ALERTS 📊' },
 ];
 
+const creativePortfolioShowcaseFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Agency / Creator Name', type: 'text', required: true, placeholder: 'e.g. AURA DESIGN STUDIO', section: 'Brand', defaultValue: 'AURA DESIGN STUDIO' },
+  { key: 'tagline', label: 'Tagline', type: 'text', required: false, placeholder: 'e.g. WE BUILD DIGITAL PRODUCTS THAT WOW', section: 'Brand' },
+  { key: 'productName', label: 'Featured Project Title', type: 'text', required: true, placeholder: 'e.g. FINTECH DASHBOARD REBRAND 2026', section: 'Project', defaultValue: 'FINTECH DASHBOARD REBRAND 2026' },
+  { key: 'description', label: 'Project Description', type: 'textarea', required: false, placeholder: 'Short summary of the work', section: 'Project', hint: 'Max 160 characters' },
+  { key: 'productImageUrl', label: 'Project Mockup Image', type: 'image', required: false, section: 'Media', imageLabel: 'Mockup image' },
+  { key: 'feature1', label: 'Core Capability 1', type: 'text', required: false, placeholder: 'e.g. Product Strategy & UI/UX', section: 'Services' },
+  { key: 'feature2', label: 'Core Capability 2', type: 'text', required: false, placeholder: 'e.g. Motion Design & 3D Visuals', section: 'Services' },
+  { key: 'feature3', label: 'Core Capability 3', type: 'text', required: false, placeholder: 'e.g. Full-Stack Web Development', section: 'Services' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. START A PROJECT WITH US 🚀', section: 'Call to Action', defaultValue: 'START A PROJECT WITH US 🚀' },
+];
+
+const saasProductAdFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'SaaS Platform Name', type: 'text', required: true, placeholder: 'e.g. PULSE AI PLATFORM', section: 'Brand', defaultValue: 'PULSE AI PLATFORM' },
+  { key: 'tagline', label: 'Tagline', type: 'text', required: false, placeholder: 'e.g. AUTOMATE WORKFLOWS WITH AI AGENTS', section: 'Brand' },
+  { key: 'productName', label: 'Main Feature Title', type: 'text', required: true, placeholder: 'e.g. REAL-TIME ANALYTICS DASHBOARD', section: 'Product', defaultValue: 'REAL-TIME ANALYTICS DASHBOARD' },
+  { key: 'description', label: 'Description', type: 'textarea', required: false, placeholder: 'Highlight key ROI', section: 'Product', hint: 'Max 160 characters' },
+  { key: 'productImageUrl', label: 'Dashboard Screenshot', type: 'image', required: false, section: 'Media', imageLabel: 'Dashboard screenshot' },
+  { key: 'feature1', label: 'SaaS Feature 1', type: 'text', required: false, placeholder: 'e.g. 10x Faster Data Processing', section: 'Features' },
+  { key: 'feature2', label: 'SaaS Feature 2', type: 'text', required: false, placeholder: 'e.g. One-Click Integrations', section: 'Features' },
+  { key: 'feature3', label: 'SaaS Feature 3', type: 'text', required: false, placeholder: 'e.g. SOC2 Type II Certified', section: 'Features' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. START 14-DAY FREE TRIAL ⚡', section: 'Call to Action', defaultValue: 'START 14-DAY FREE TRIAL ⚡' },
+];
+
+const courseMasterclassPromoFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Academy Name', type: 'text', required: true, placeholder: 'e.g. MASTERY ACADEMY', section: 'Brand', defaultValue: 'MASTERY ACADEMY' },
+  { key: 'tagline', label: 'Course Tagline', type: 'text', required: false, placeholder: 'e.g. ZERO TO HERO MASTERCLASS', section: 'Brand' },
+  { key: 'productName', label: 'Course Title', type: 'text', required: true, placeholder: 'e.g. FULL-STACK AI ENGINEERING', section: 'Course', defaultValue: 'FULL-STACK AI ENGINEERING MASTERCLASS' },
+  { key: 'description', label: 'Curriculum Summary', type: 'textarea', required: false, placeholder: 'Key learning outcomes', section: 'Course', hint: 'Max 160 characters' },
+  { key: 'productImageUrl', label: 'Instructor / Course Visual', type: 'image', required: false, section: 'Media', imageLabel: 'Instructor photo' },
+  { key: 'speakerName', label: 'Instructor Name', type: 'text', required: false, placeholder: 'e.g. Prof. David Miller', section: 'Instructor' },
+  { key: 'feature1', label: 'Curriculum Highlight 1', type: 'text', required: false, placeholder: 'e.g. 40+ Hours HD Video Lessons', section: 'Modules' },
+  { key: 'feature2', label: 'Curriculum Highlight 2', type: 'text', required: false, placeholder: 'e.g. Build 5 Production AI Apps', section: 'Modules' },
+  { key: 'feature3', label: 'Curriculum Highlight 3', type: 'text', required: false, placeholder: 'e.g. Certificate of Completion', section: 'Modules' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. ENROLL TODAY — 50% OFF 🎓', section: 'Call to Action', defaultValue: 'ENROLL TODAY — 50% OFF 🎓' },
+];
+
+const ecommerceFlashSaleFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Store Name', type: 'text', required: true, placeholder: 'e.g. URBAN STYLE STORE', section: 'Brand', defaultValue: 'URBAN STYLE STORE' },
+  { key: 'tagline', label: 'Sale Tagline', type: 'text', required: false, placeholder: 'e.g. MIDNIGHT FLASH SALE', section: 'Brand' },
+  { key: 'productName', label: 'Deal Product Name', type: 'text', required: true, placeholder: 'e.g. NOISE-CANCELING WIRELESS HEADPHONES', section: 'Product', defaultValue: 'NOISE-CANCELING WIRELESS HEADPHONES' },
+  { key: 'description', label: 'Product Description', type: 'textarea', required: false, placeholder: 'Short product highlight', section: 'Product', hint: 'Max 160 characters' },
+  { key: 'price', label: 'Sale Price', type: 'text', required: false, placeholder: '$129', section: 'Pricing' },
+  { key: 'originalPrice', label: 'Original Price', type: 'text', required: false, placeholder: '$299', section: 'Pricing' },
+  { key: 'discount', label: 'Discount Badge', type: 'text', required: false, placeholder: '60% OFF', section: 'Pricing' },
+  { key: 'productImageUrl', label: 'Product Photo', type: 'image', required: false, section: 'Media', imageLabel: 'Product photo' },
+  { key: 'feature1', label: 'Sale Perk 1', type: 'text', required: false, placeholder: 'e.g. Free Express Shipping', section: 'Perks' },
+  { key: 'feature2', label: 'Sale Perk 2', type: 'text', required: false, placeholder: 'e.g. 2-Year Warranty Included', section: 'Perks' },
+  { key: 'feature3', label: 'Sale Perk 3', type: 'text', required: false, placeholder: 'e.g. 30-Day Money Back Guarantee', section: 'Perks' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SHOP FLASH SALE NOW 🛍️', section: 'Call to Action', defaultValue: 'SHOP FLASH SALE NOW 🛍️' },
+];
+
+const eventWebinarTeaserFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Event Name', type: 'text', required: true, placeholder: 'e.g. GLOBAL TECH SUMMIT 2026', section: 'Event', defaultValue: 'GLOBAL TECH SUMMIT 2026' },
+  { key: 'tagline', label: 'Event Tagline', type: 'text', required: false, placeholder: 'e.g. THE ANNUAL AI & DISRUPTIVE TECH CONFERENCE', section: 'Event' },
+  { key: 'productName', label: 'Keynote Topic', type: 'text', required: true, placeholder: 'e.g. AUTONOMOUS AGENTS IN ENTERPRISE', section: 'Keynote', defaultValue: 'KEYNOTE: AUTONOMOUS AGENTS IN ENTERPRISE' },
+  { key: 'description', label: 'Event Overview', type: 'textarea', required: false, placeholder: 'Overview of speakers and tracks', section: 'Event', hint: 'Max 160 characters' },
+  { key: 'speakerName', label: 'Keynote Speaker', type: 'text', required: false, placeholder: 'e.g. Dr. Marcus Vance', section: 'Speaker' },
+  { key: 'eventDate', label: 'Event Date & Location', type: 'text', required: false, placeholder: 'e.g. OCTOBER 24-25 • SAN FRANCISCO', section: 'Details' },
+  { key: 'productImageUrl', label: 'Speaker Photo / Banner', type: 'image', required: false, section: 'Media', imageLabel: 'Speaker photo' },
+  { key: 'feature1', label: 'Agenda Topic 1', type: 'text', required: false, placeholder: 'e.g. October 24-25 • San Francisco, CA', section: 'Agenda' },
+  { key: 'feature2', label: 'Agenda Topic 2', type: 'text', required: false, placeholder: 'e.g. Live Keynotes & Interactive Q&A', section: 'Agenda' },
+  { key: 'feature3', label: 'Agenda Topic 3', type: 'text', required: false, placeholder: 'e.g. Global Streaming & Replays', section: 'Agenda' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. RESERVE YOUR FREE SPOT 🎟️', section: 'Call to Action', defaultValue: 'RESERVE YOUR FREE SPOT 🎟️' },
+];
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Registry
 // ─────────────────────────────────────────────────────────────────────────────
@@ -330,6 +396,11 @@ export const templateFieldConfigs: Record<TemplateId, TemplateFieldDefinition[]>
   'tech-tutorial-explainer': techTutorialExplainerFields,
   'youtube-vlog-intro': youtubeVlogIntroFields,
   'finance-crypto-explainer': financeCryptoExplainerFields,
+  'creative-portfolio-showcase': creativePortfolioShowcaseFields,
+  'saas-product-ad': saasProductAdFields,
+  'course-masterclass-promo': courseMasterclassPromoFields,
+  'ecommerce-flash-sale': ecommerceFlashSaleFields,
+  'event-webinar-teaser': eventWebinarTeaserFields,
 };
 
 /** Returns the field configuration for a template, or an empty array if unknown. */

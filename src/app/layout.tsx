@@ -3,6 +3,9 @@ import type { ReactNode } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import { Suspense } from "react";
+import { TopLoader } from "@/components/ui/TopLoader";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -23,6 +26,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans antialiased h-full min-h-screen bg-background text-foreground`}
       >
+        <Suspense fallback={null}>
+          <TopLoader />
+        </Suspense>
         {children}
       </body>
     </html>

@@ -24,6 +24,11 @@ import { youtubeShortsViralHookDefaultContent } from './YouTubeShortsViralHook/d
 import { techTutorialExplainerDefaultContent } from './TechTutorialExplainer/defaults';
 import { youtubeVlogIntroDefaultContent } from './YouTubeVlogIntro/defaults';
 import { financeCryptoExplainerDefaultContent } from './FinanceCryptoExplainer/defaults';
+import { creativePortfolioShowcaseDefaultContent } from './CreativePortfolioShowcase/defaults';
+import { saasProductAdDefaultContent } from './SaaSProductAd/defaults';
+import { courseMasterclassPromoDefaultContent } from './CourseMasterclassPromo/defaults';
+import { ecommerceFlashSaleDefaultContent } from './EcommerceFlashSale/defaults';
+import { eventWebinarTeaserDefaultContent } from './EventWebinarTeaser/defaults';
 
 /**
  * Template Registry
@@ -375,6 +380,86 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
     durationInFrames: 450,
     featured: true,
     defaultProps: financeCryptoExplainerDefaultContent,
+  },
+
+  'creative-portfolio-showcase': {
+    id: 'creative-portfolio-showcase',
+    name: 'Creative & Agency Portfolio Showcase',
+    description:
+      'Sleek design agency & creator portfolio showcase featuring project card grid reveals, service highlights, stats, and project inquiry CTA.',
+    category: 'explainer',
+    tags: ['portfolio', 'agency', 'design', 'showcase', 'creator', 'freelancer'],
+    thumbnailUrl: '/templates/creative-portfolio-showcase.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: creativePortfolioShowcaseDefaultContent,
+  },
+
+  'saas-product-ad': {
+    id: 'saas-product-ad',
+    name: 'SaaS & App Product Promo Ad',
+    description:
+      'High-converting commercial ad for SaaS platforms with dashboard mockups, feature pill grids, ROI stats, and free trial call-to-action.',
+    category: 'ads',
+    tags: ['saas', 'software', 'app', 'ad', 'commercial', 'marketing'],
+    thumbnailUrl: '/templates/saas-product-ad.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: saasProductAdDefaultContent,
+  },
+
+  'course-masterclass-promo': {
+    id: 'course-masterclass-promo',
+    name: 'Online Course & Masterclass Promo',
+    description:
+      'Educational masterclass advertisement with instructor spotlight card, module curriculum breakdown, student review badge, and enrollment CTA.',
+    category: 'tutorial',
+    tags: ['course', 'education', 'masterclass', 'learning', 'promo', 'instructor'],
+    thumbnailUrl: '/templates/course-masterclass-promo.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: courseMasterclassPromoDefaultContent,
+  },
+
+  'ecommerce-flash-sale': {
+    id: 'ecommerce-flash-sale',
+    name: 'E-Commerce Flash Sale & Deal Promo',
+    description:
+      'Urgency-driven retail & e-commerce video ad featuring strike-through pricing, discount badges, perk highlights, and immediate buy button.',
+    category: 'ads',
+    tags: ['ecommerce', 'flash-sale', 'shopping', 'discount', 'fashion', 'retail'],
+    thumbnailUrl: '/templates/ecommerce-flash-sale.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: ecommerceFlashSaleDefaultContent,
+  },
+
+  'event-webinar-teaser': {
+    id: 'event-webinar-teaser',
+    name: 'Live Event & Webinar Teaser Promo',
+    description:
+      'High-engagement announcement trailer for summits, webinars, and conferences with keynote speaker spotlight, agenda breakdown, and seat reservation CTA.',
+    category: 'social-media',
+    tags: ['event', 'webinar', 'conference', 'summit', 'live', 'registration'],
+    thumbnailUrl: '/templates/event-webinar-teaser.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: eventWebinarTeaserDefaultContent,
   },
 };
 

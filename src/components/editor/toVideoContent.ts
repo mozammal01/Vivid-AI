@@ -233,6 +233,66 @@ export function toVideoContent(
         growthStat: '+14.8%',
       };
     }
+    case 'creative-portfolio-showcase': {
+      return {
+        ...content,
+        headline: values.headline.trim() || values.tagline.trim() || 'CREATIVE PORTFOLIO 2026',
+        product: {
+          ...content.product,
+          name: values.productName.trim() || 'FINTECH DASHBOARD REBRAND 2026',
+          description: values.description.trim() || undefined,
+        },
+      };
+    }
+    case 'saas-product-ad': {
+      return {
+        ...content,
+        headline: values.headline.trim() || values.tagline.trim() || 'NEXT-GEN SAAS PLATFORM',
+        product: {
+          ...content.product,
+          name: values.productName.trim() || 'REAL-TIME ANALYTICS DASHBOARD',
+          description: values.description.trim() || undefined,
+        },
+      };
+    }
+    case 'course-masterclass-promo': {
+      return {
+        ...content,
+        headline: values.headline.trim() || values.tagline.trim() || 'ZERO TO HERO MASTERCLASS',
+        speakerName: values.speakerName?.trim() || 'Prof. David Miller',
+        product: {
+          ...content.product,
+          name: values.productName.trim() || 'FULL-STACK AI ENGINEERING MASTERCLASS',
+          description: values.description.trim() || undefined,
+        },
+      };
+    }
+    case 'ecommerce-flash-sale': {
+      return {
+        ...content,
+        headline: values.headline.trim() || values.tagline.trim() || 'LIMITED TIME FLASH SALE ⚡',
+        product: {
+          ...content.product,
+          name: values.productName.trim() || 'NOISE-CANCELING WIRELESS HEADPHONES',
+          price: values.price?.trim() || '$129',
+          originalPrice: values.originalPrice?.trim() || '$299',
+          discount: values.discount?.trim() || '60% OFF',
+        },
+      };
+    }
+    case 'event-webinar-teaser': {
+      return {
+        ...content,
+        headline: values.headline.trim() || values.tagline.trim() || 'LIVE VIRTUAL & IN-PERSON SUMMIT',
+        eventDate: values.date?.trim() || 'OCTOBER 24-25, 2026',
+        speakerName: values.speakerName?.trim() || 'Dr. Marcus Vance (Keynote)',
+        product: {
+          ...content.product,
+          name: values.productName.trim() || 'KEYNOTE: AUTONOMOUS AGENTS IN ENTERPRISE',
+          description: values.description.trim() || undefined,
+        },
+      };
+    }
     default:
       return content;
   }

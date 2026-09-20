@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  Home,
   LayoutDashboard,
   Video,
   Layers,
@@ -19,6 +20,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
+  { name: "Home Page", href: "/", icon: Home },
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { name: "Create Video", href: "/create-video", icon: Video },
   { name: "Templates", href: "/dashboard/templates", icon: Layers },
@@ -38,14 +40,20 @@ export default function DashboardLayout({
     <div className="flex h-screen bg-background overflow-hidden">
       {/* Desktop Sidebar */}
       <aside className="hidden md:flex flex-col w-64 border-r border-border bg-card">
-        {/* Logo Section */}
+        {/* Logo Section - Links to Home Page (/) */}
         <div className="flex items-center gap-2 px-6 h-16 border-b border-border">
-          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground">
-            <Sparkles className="w-5 h-5" />
-          </div>
-          <span className="font-bold text-lg tracking-tight bg-gradient-to-r from-primary to-indigo-600 bg-clip-text text-transparent">
-            VividAI
-          </span>
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 group cursor-pointer hover:opacity-95 transition-all"
+            title="Go to Home Landing Page"
+          >
+            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground shadow-md shadow-primary/20 group-hover:scale-105 transition-transform">
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <span className="font-bold text-lg tracking-tight bg-gradient-to-r from-primary to-indigo-600 bg-clip-text text-transparent">
+              VividAI
+            </span>
+          </Link>
         </div>
 
         {/* Navigation Items */}
@@ -61,11 +69,16 @@ export default function DashboardLayout({
                 className={cn(
                   "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group relative",
                   isActive
-                    ? "bg-primary/10 text-primary"
+                    ? "bg-primary/10 text-primary font-semibold"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 )}
               >
-                <Icon className={cn("w-5 h-5 transition-colors", isActive ? "text-primary" : "text-muted-foreground group-hover:text-foreground")} />
+                <Icon
+                  className={cn(
+                    "w-5 h-5 transition-colors",
+                    isActive ? "text-primary" : "text-muted-foreground group-hover:text-foreground"
+                  )}
+                />
                 {item.name}
                 {isActive && (
                   <span className="absolute right-3 w-1.5 h-1.5 rounded-full bg-primary" />
@@ -75,8 +88,18 @@ export default function DashboardLayout({
           })}
         </nav>
 
-        {/* User Profile Footer */}
-        <div className="p-4 border-t border-border mt-auto">
+        {/* Home Button & User Profile Footer */}
+        <div className="p-4 border-t border-border mt-auto space-y-3">
+          <Link href="/">
+            <Button
+              variant="outline"
+              size="sm"
+              className="w-full justify-start gap-2.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted border-border/80"
+            >
+              <Home className="w-4 h-4 text-primary" />
+              Return to Home Page
+            </Button>
+          </Link>
           <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
             <div className="flex items-center justify-center w-9 h-9 rounded-full bg-primary/15 text-primary font-semibold text-sm">
               JD
@@ -107,14 +130,19 @@ export default function DashboardLayout({
         )}
       >
         <div className="flex items-center justify-between px-6 h-16 border-b border-border">
-          <div className="flex items-center gap-2">
+          <Link
+            href="/"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-2.5"
+            title="Go to Home Landing Page"
+          >
             <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground">
               <Sparkles className="w-5 h-5" />
             </div>
             <span className="font-bold text-lg tracking-tight bg-gradient-to-r from-primary to-indigo-600 bg-clip-text text-transparent">
               VividAI
             </span>
-          </div>
+          </Link>
           <Button
             variant="ghost"
             size="icon"
@@ -139,7 +167,7 @@ export default function DashboardLayout({
                 className={cn(
                   "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group relative",
                   isActive
-                    ? "bg-primary/10 text-primary"
+                    ? "bg-primary/10 text-primary font-semibold"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 )}
               >
@@ -153,7 +181,17 @@ export default function DashboardLayout({
           })}
         </nav>
 
-        <div className="p-4 border-t border-border mt-auto">
+        <div className="p-4 border-t border-border mt-auto space-y-3">
+          <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+            <Button
+              variant="outline"
+              size="sm"
+              className="w-full justify-start gap-2.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted border-border/80"
+            >
+              <Home className="w-4 h-4 text-primary" />
+              Return to Home Page
+            </Button>
+          </Link>
           <div className="flex items-center gap-3 p-2 rounded-lg">
             <div className="flex items-center justify-center w-9 h-9 rounded-full bg-primary/15 text-primary font-semibold text-sm">
               JD

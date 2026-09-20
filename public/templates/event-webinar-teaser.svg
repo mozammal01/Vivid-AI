@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <rect width="400" height="250" fill="#0B0F19"/>
+  <circle cx="200" cy="110" r="130" fill="#6366F1" opacity="0.18"/>
+  <text x="200" y="45" text-anchor="middle" fill="#14B8A6" font-family="system-ui, sans-serif" font-size="12" font-weight="800" letter-spacing="2">GLOBAL TECH SUMMIT 2026</text>
+  <text x="200" y="70" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="16" font-weight="900">KEYNOTE: AUTONOMOUS AGENTS</text>
+  <rect x="70" y="90" width="260" height="95" rx="12" fill="#151C2C" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="200" y="130" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="14" font-weight="700">OCTOBER 24-25 • SAN FRANCISCO</text>
+  <text x="200" y="155" text-anchor="middle" fill="#14B8A6" font-family="system-ui, sans-serif" font-size="12" font-weight="800">40+ Pioneers from OpenAI & DeepMind</text>
+  <rect x="120" y="200" width="160" height="26" rx="13" fill="#6366F1"/>
+  <text x="200" y="217" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10" font-weight="900">RESERVE FREE SPOT 🎟️</text>
+</svg>
