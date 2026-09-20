@@ -453,7 +453,7 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
       'High-engagement announcement trailer for summits, webinars, and conferences with keynote speaker spotlight, agenda breakdown, and seat reservation CTA.',
     category: 'social-media',
     tags: ['event', 'webinar', 'conference', 'summit', 'live', 'registration'],
-    thumbnailUrl: '/templates/event-webinar-teaser.svg',
+    thumbnailUrl: '/templates/event-webinar-teaser.jpg',
     supportedAspectRatios: ['16:9', '1:1', '9:16'],
     defaultAspectRatio: '16:9',
     fps: 30,

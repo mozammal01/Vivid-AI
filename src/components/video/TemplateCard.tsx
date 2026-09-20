@@ -37,6 +37,7 @@ export function TemplateCard({
           src={template.thumbnailUrl}
           alt={`${template.name} preview`}
           fill
+          unoptimized={template.thumbnailUrl.endsWith('.svg')}
           sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover"
         />

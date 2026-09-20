@@ -43,23 +43,29 @@ import {
   type RenderClientResult,
 } from "@/lib/render/render-client";
 
+import { getDemoFormValuesForTemplate } from "@/components/editor/templateDemoData";
+
 export function CreateVideoEditor() {
   const searchParams = useSearchParams();
   const queryTemplate = searchParams.get("template");
 
   type RenderStatus = "idle" | "rendering" | "success" | "error";
 
-  const [values, setValues] = useState<EditorFormValues>(() => ({
-    ...defaultEditorValues,
-    // Deep-link support: /create-video?template=<id> preselects a template.
-    ...(queryTemplate && isTemplateId(queryTemplate)
-      ? {
-          templateId: queryTemplate satisfies TemplateId,
-          aspectRatio:
-            getTemplateDefinition(queryTemplate)?.defaultAspectRatio ?? "9:16",
-        }
-      : {}),
-  }));
+  const [values, setValues] = useState<EditorFormValues>(() => {
+    const initialTemplateId =
+      queryTemplate && isTemplateId(queryTemplate)
+        ? (queryTemplate as TemplateId)
+        : defaultEditorValues.templateId;
+    const initial = getDemoFormValuesForTemplate(
+      initialTemplateId,
+      defaultEditorValues
+    );
+    const templateDef = getTemplateDefinition(initialTemplateId);
+    if (templateDef && !templateDef.supportedAspectRatios.includes(initial.aspectRatio)) {
+      initial.aspectRatio = templateDef.defaultAspectRatio;
+    }
+    return initial;
+  });
   const [errors, setErrors] = useState<EditorFieldErrors>({});
   const [status, setStatus] = useState<"idle" | "preview">("idle");
   const previewRef = useRef<HTMLDivElement>(null);
@@ -164,23 +170,23 @@ export function CreateVideoEditor() {
       const template = getTemplateDefinition(templateId);
       if (!template) return prev;
 
-      const next: EditorFormValues = { ...prev, templateId };
+      const updated = getDemoFormValuesForTemplate(templateId, prev);
       if (!template.supportedAspectRatios.includes(prev.aspectRatio)) {
-        next.aspectRatio = template.defaultAspectRatio;
+        updated.aspectRatio = template.defaultAspectRatio;
       }
       if (
         template.supportedDurations &&
         !template.supportedDurations.includes(prev.duration as any)
       ) {
-        next.duration = template.supportedDurations[0] as any;
+        updated.duration = template.supportedDurations[0] as any;
       }
-      return next;
+      return updated;
     });
     setStatus("idle");
   };
 
   const handleReset = () => {
-    setValues(defaultEditorValues);
+    setValues(getDemoFormValuesForTemplate(values.templateId, defaultEditorValues));
     setErrors({});
     setStatus("idle");
     setRenderStatus("idle");

@@ -1,11 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
-  <rect width="400" height="250" fill="#0C0A1D"/>
-  <circle cx="200" cy="110" r="130" fill="#8B5CF6" opacity="0.15"/>
-  <text x="200" y="45" text-anchor="middle" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="12" font-weight="800" letter-spacing="2">MASTERY ACADEMY</text>
-  <text x="200" y="70" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="16" font-weight="900">FULL-STACK AI MASTERCLASS</text>
-  <rect x="70" y="90" width="260" height="95" rx="12" fill="#171233" stroke="#8B5CF6" stroke-width="1.5"/>
-  <text x="200" y="130" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="14" font-weight="700">🎓 40+ Hours HD Video Lessons</text>
-  <text x="200" y="155" text-anchor="middle" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="12" font-weight="800">5.0 ★★★★★ (2,400+ Students)</text>
-  <rect x="120" y="200" width="160" height="26" rx="13" fill="#8B5CF6"/>
-  <text x="200" y="217" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10" font-weight="900">ENROLL TODAY 🎓</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="courseBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140F2E"/>
+      <stop offset="100%" stop-color="#0C0A1D"/>
+    </linearGradient>
+    <linearGradient id="purpleGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" fill="url(#courseBg)"/>
+  <circle cx="200" cy="110" r="140" fill="#8B5CF6" opacity="0.2"/>
+  <text x="200" y="42" text-anchor="middle" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="12" font-weight="800" letter-spacing="2">MASTERY ACADEMY</text>
+  <text x="200" y="68" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="16" font-weight="900">FULL-STACK AI MASTERCLASS</text>
+  <rect x="50" y="88" width="300" height="98" rx="14" fill="#171233" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="200" y="125" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="14" font-weight="700">🎓 40+ Hours HD Video Lessons</text>
+  <text x="200" y="152" text-anchor="middle" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="12" font-weight="800">5.0 ★★★★★ (2,400+ Students)</text>
+  <rect x="110" y="200" width="180" height="28" rx="14" fill="url(#purpleGlow)"/>
+  <text x="200" y="218" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="900">ENROLL TODAY 🎓</text>
 </svg>
