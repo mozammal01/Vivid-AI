@@ -28,11 +28,14 @@ import {
 } from "@/remotion/templates";
 import { formatDate, formatDuration } from "@/utils";
 
+import { WelcomeVideoModal } from "@/components/video/WelcomeVideoModal";
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function DashboardHome() {
   return (
     <div className="space-y-10">
+      <WelcomeVideoModal />
       {/* Welcome Banner */}
       <section className="relative rounded-2xl border border-primary/10 bg-gradient-to-r from-primary/5 via-indigo-500/5 to-transparent p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 overflow-hidden">
         <div className="space-y-2">

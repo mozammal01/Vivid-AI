@@ -20,9 +20,12 @@ export const metadata: Metadata = {
  * from globals.css for everything inside this page only. The Dashboard
  * (`/dashboard`) and editor (`/create-video`) routes remain untouched.
  */
+import { WelcomeVideoModal } from "@/components/video/WelcomeVideoModal";
+
 export default function Home() {
   return (
     <div className="dark min-h-screen bg-background text-foreground antialiased selection:bg-primary/30 selection:text-foreground">
+      <WelcomeVideoModal />
       <Navbar />
       <main>
         <Hero />
