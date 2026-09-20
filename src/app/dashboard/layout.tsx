@@ -28,6 +28,8 @@ const navItems = [
   { name: "Settings", href: "/dashboard/settings", icon: Settings },
 ];
 
+import { GlobalSearchModal } from "@/components/search/GlobalSearchModal";
+
 export default function DashboardLayout({
   children,
 }: {
@@ -35,9 +37,11 @@ export default function DashboardLayout({
 }) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <div className="flex h-screen bg-background overflow-hidden">
+      <GlobalSearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
       {/* Desktop Sidebar */}
       <aside className="hidden md:flex flex-col w-64 border-r border-border bg-card">
         {/* Logo Section - Links to Home Page (/) */}
@@ -218,10 +222,17 @@ export default function DashboardLayout({
             >
               <Menu className="w-5 h-5" />
             </Button>
-            <div className="hidden sm:flex items-center gap-2 text-xs bg-muted/60 border border-border/60 rounded-lg px-3 py-1.5 w-64 text-muted-foreground">
-              <Search className="w-3.5 h-3.5" />
-              <span>Search projects, templates...</span>
-            </div>
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="hidden sm:flex items-center justify-between gap-3 text-xs bg-muted/60 border border-border/60 hover:border-primary/50 hover:bg-muted/80 rounded-lg px-3 py-1.5 w-72 text-muted-foreground transition-all group cursor-pointer shadow-xs"
+              title="Search templates, projects, categories (Ctrl+K / ⌘K)"
+            >
+              <div className="flex items-center gap-2">
+                <Search className="w-3.5 h-3.5 text-primary group-hover:scale-110 transition-transform" />
+                <span>Search 26 templates, videos...</span>
+              </div>
+              <kbd className="px-1.5 py-0.5 text-[10px] font-mono font-semibold rounded bg-card border border-border text-foreground/80">⌘K</kbd>
+            </button>
           </div>
 
           <div className="flex items-center gap-4">

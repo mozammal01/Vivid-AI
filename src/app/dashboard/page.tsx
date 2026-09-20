@@ -5,7 +5,6 @@ import {
   Film,
   Layers,
   Clock,
-  Calendar,
   CheckCircle2,
   Loader2,
   Sparkles,
@@ -26,9 +25,10 @@ import {
   otherTemplates,
   templateList,
 } from "@/remotion/templates";
-import { formatDate, formatDuration } from "@/utils";
-
+import Image from "next/image";
+import { TemplateCard } from "@/components/video/TemplateCard";
 import { WelcomeVideoModal } from "@/components/video/WelcomeVideoModal";
+import { formatDate, formatDuration } from "@/utils";
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
@@ -135,19 +135,31 @@ export default function DashboardHome() {
           {demoProjects.map((project) => (
             <Card
               key={project.id}
-              className="overflow-hidden flex flex-col justify-between"
+              className="overflow-hidden flex flex-col justify-between group hover:border-primary/40 transition-all shadow-sm"
             >
-              {/* Thumbnail placeholder */}
-              <div className="aspect-video w-full bg-slate-900/10 border-b border-border/40 relative flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/10 via-primary/5 to-slate-900/10 flex flex-col items-center justify-center text-muted-foreground/30">
-                  <Film className="w-10 h-10 stroke-[1.2]" />
-                  <span className="text-[10px] mt-2 tracking-widest font-mono">
-                    {project.aspectRatio} · {project.width}×{project.height}
-                  </span>
-                </div>
+              {/* Real Thumbnail */}
+              <div className="aspect-video w-full bg-slate-950 border-b border-border/40 relative overflow-hidden">
+                {project.thumbnailUrl ? (
+                  <Image
+                    src={project.thumbnailUrl}
+                    alt={project.title}
+                    fill
+                    unoptimized={project.thumbnailUrl.endsWith(".svg")}
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/20 via-primary/5 to-slate-900/20 flex flex-col items-center justify-center text-muted-foreground/40">
+                    <Film className="w-10 h-10 stroke-[1.2]" />
+                    <span className="text-[10px] mt-2 tracking-widest font-mono">
+                      {project.aspectRatio} · {project.width}×{project.height}
+                    </span>
+                  </div>
+                )}
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
 
                 {/* Duration chip */}
-                <div className="absolute bottom-2.5 right-2.5 px-2 py-1 rounded bg-black/75 text-[10px] font-medium text-white flex items-center gap-1">
+                <div className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded bg-black/75 text-[10px] font-medium text-white flex items-center gap-1 backdrop-blur-xs">
                   <Clock className="w-3 h-3" />
                   {formatDuration(project.durationInFrames, project.fps)}
                 </div>
@@ -155,12 +167,12 @@ export default function DashboardHome() {
                 {/* Status badge */}
                 <div className="absolute top-2.5 left-2.5">
                   {project.status === "rendering" ? (
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-500/10 text-blue-500 border border-blue-500/15">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-blue-500/80 text-white shadow-xs backdrop-blur-xs">
                       <Loader2 className="w-2.5 h-2.5 animate-spin" />
                       Rendering
                     </span>
                   ) : (
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/15">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/80 text-white shadow-xs backdrop-blur-xs">
                       <CheckCircle2 className="w-2.5 h-2.5" />
                       Completed
                     </span>
@@ -169,19 +181,22 @@ export default function DashboardHome() {
               </div>
 
               <CardHeader className="p-4 pb-2">
-                <CardTitle className="text-base truncate font-medium">
+                <CardTitle className="text-sm truncate font-semibold">
                   {project.title}
                 </CardTitle>
-                <CardDescription className="flex items-center gap-1.5 text-xs">
-                  <Calendar className="w-3.5 h-3.5 text-muted-foreground" />
-                  Created {formatDate(project.createdAt)}
+                <CardDescription className="flex items-center justify-between text-xs pt-1">
+                  <span className="text-muted-foreground">{project.template?.name ?? "Video Template"}</span>
+                  <span className="text-[10px] font-mono text-muted-foreground/70">{formatDate(project.createdAt)}</span>
                 </CardDescription>
               </CardHeader>
 
               <CardFooter className="p-4 pt-2 mt-0 border-t-0">
-                <Button variant="outline" size="sm" className="w-full text-xs">
-                  {project.status === "rendering" ? "View Status" : "Open Editor"}
-                </Button>
+                <Link href={project.template ? `/create-video?template=${project.template.id}` : "/create-video"} className="w-full">
+                  <Button variant="outline" size="sm" className="w-full text-xs gap-1.5 hover:bg-primary/10 hover:text-primary">
+                    {project.status === "rendering" ? "View Rendering Status" : "Open In Editor"}
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Button>
+                </Link>
               </CardFooter>
             </Card>
           ))}
@@ -193,10 +208,10 @@ export default function DashboardHome() {
         <div className="flex items-center justify-between">
           <div className="space-y-1">
             <h2 className="text-xl font-bold tracking-tight">
-              Available Templates
+              Available Templates (26)
             </h2>
             <p className="text-xs text-muted-foreground">
-              Select a pre-designed template to start generating your next video.
+              Select any high-converting template to launch the editor with pre-loaded demo data.
             </p>
           </div>
           <Link href="/dashboard/templates">
@@ -205,123 +220,43 @@ export default function DashboardHome() {
               size="sm"
               className="gap-1.5 text-xs text-muted-foreground hover:text-foreground"
             >
-              View All Templates
+              View All 26 Templates
               <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>
         </div>
 
         {featuredTemplates.length > 0 && (
-          <div className="space-y-3">
+          <div className="space-y-4">
             <h3 className="text-sm font-semibold text-primary flex items-center gap-1.5">
-              <Star className="w-3.5 h-3.5" />
+              <Star className="w-4 h-4" />
               Featured Templates
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredTemplates.map((template) => (
-                <Card key={template.id} className="flex flex-col justify-between">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-primary bg-primary/10 px-2 py-0.5 rounded-full">
-                        {template.category}
-                      </span>
-                      <span className="text-xs font-medium text-muted-foreground">
-                        {template.supportedAspectRatios.join(" · ")}
-                      </span>
-                    </div>
-                    <CardTitle className="text-base font-semibold">
-                      {template.name}
-                    </CardTitle>
-                    <CardDescription className="text-xs line-clamp-2 mt-1">
-                      {template.description}
-                    </CardDescription>
-                  </CardHeader>
-
-                  <CardContent className="pb-3">
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5" />
-                        {formatDuration(template.durationInFrames, template.fps)}
-                      </span>
-                      <span>{template.fps} FPS</span>
-                      <span>{template.tags.slice(0, 2).join(", ")}</span>
-                    </div>
-                  </CardContent>
-
-                  <CardFooter className="pt-2">
-                    <Link
-                      href={`/create-video?template=${template.id}`}
-                      className="w-full"
-                    >
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="w-full gap-1.5 text-xs"
-                      >
-                        Use Template
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
+                <TemplateCard
+                  key={template.id}
+                  template={template}
+                  href={`/create-video?template=${template.id}`}
+                />
               ))}
             </div>
           </div>
         )}
 
         {otherTemplates.length > 0 && (
-          <div className="space-y-3">
+          <div className="space-y-4 pt-4">
             <h3 className="text-sm font-semibold text-muted-foreground flex items-center gap-1.5">
-              <Layers className="w-3.5 h-3.5" />
-              Other Templates
+              <Layers className="w-4 h-4" />
+              More Industry Templates
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherTemplates.map((template) => (
-                <Card key={template.id} className="flex flex-col justify-between">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] font-bold tracking-wider uppercase text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
-                        {template.category}
-                      </span>
-                      <span className="text-xs font-medium text-muted-foreground">
-                        {template.supportedAspectRatios.join(" · ")}
-                      </span>
-                    </div>
-                    <CardTitle className="text-base font-semibold">
-                      {template.name}
-                    </CardTitle>
-                    <CardDescription className="text-xs line-clamp-2 mt-1">
-                      {template.description}
-                    </CardDescription>
-                  </CardHeader>
-
-                  <CardContent className="pb-3">
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5" />
-                        {formatDuration(template.durationInFrames, template.fps)}
-                      </span>
-                      <span>{template.fps} FPS</span>
-                      <span>{template.tags.slice(0, 2).join(", ")}</span>
-                    </div>
-                  </CardContent>
-
-                  <CardFooter className="pt-2">
-                    <Link
-                      href={`/create-video?template=${template.id}`}
-                      className="w-full"
-                    >
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="w-full gap-1.5 text-xs"
-                      >
-                        Use Template
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
+                <TemplateCard
+                  key={template.id}
+                  template={template}
+                  href={`/create-video?template=${template.id}`}
+                />
               ))}
             </div>
           </div>
