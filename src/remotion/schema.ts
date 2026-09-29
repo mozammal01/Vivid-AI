@@ -17,6 +17,8 @@ const productInfoSchema = z.object({
   discount: z.string().optional(),
   features: z.array(z.string()).max(4).optional(),
   imageUrl: z.string().optional(),
+  location: z.string().optional(),
+  dateFrom: z.number().optional(),
 });
 
 const ctaSchema = z.object({
@@ -56,6 +58,9 @@ export const videoContentSchema = z.object({
   tickerText: z.string().optional(),
   /** Optional countdown fields. Existing templates safely ignore these. */
   listTitle: z.string().optional(),
+  rank: z.number().finite().optional(),
+  itemTitle: z.string().optional(),
+  accentText: z.string().optional(),
   item1Title: z.string().optional(),
   item1Description: z.string().optional(),
   item1Image: z.string().optional(),
@@ -76,10 +81,23 @@ export const videoContentSchema = z.object({
   item5Description: z.string().optional(),
   item5Image: z.string().optional(),
   item5AccentText: z.string().optional(),
-  /** Optional movie trailer fields. Existing templates safely ignore these. */
+  /** Optional movie trailer & showcase fields. Existing templates safely ignore these. */
   description: z.string().optional(),
   statisticLabel: z.string().optional(),
   year: z.string().optional(),
+  season: z.string().optional(),
+  lookNumber: z.string().optional(),
+  speaker: z.string().optional(),
+  episodeNumber: z.string().optional(),
+  version: z.string().optional(),
+  agentName: z.string().optional(),
+  agentPhone: z.string().optional(),
+  statNumber: z.string().optional(),
+  statLabel: z.string().optional(),
+  pros: z.array(z.string()).optional(),
+  cons: z.array(z.string()).optional(),
+  verdictSummary: z.string().optional(),
+  timerDurationSeconds: z.number().finite().optional(),
   /** Optional YouTube template fields. Existing templates safely ignore these. */
   gamerTag: z.string().optional(),
   score: z.string().optional(),

@@ -81,23 +81,23 @@ export function toVideoContent(
           imageUrl: values.image || values.productImageUrl || undefined,
         },
         category: values.category.trim() || 'Technology',
-        item5Title: 'Smart Glasses',
+        item5Title: values.item5Title?.trim() || 'Smart Glasses',
         item5Description: 'Smart glasses are bringing digital information directly into our everyday view.',
         item5Image: values.image || values.productImageUrl || undefined,
         item5AccentText: '#5',
-        item4Title: 'AI Assistants',
+        item4Title: values.item4Title?.trim() || 'AI Assistants',
         item4Description: 'AI assistants are changing how people work, communicate and access information.',
         item4Image: values.image || values.productImageUrl || undefined,
         item4AccentText: '#4',
-        item3Title: 'Electric Vehicles',
+        item3Title: values.item3Title?.trim() || values.feature3?.trim() || 'Electric Vehicles',
         item3Description: 'Electric vehicles are transforming transportation with cleaner and smarter technology.',
         item3Image: values.image || values.productImageUrl || undefined,
         item3AccentText: '#3',
-        item2Title: 'Robotics',
+        item2Title: values.item2Title?.trim() || values.feature2?.trim() || 'Robotics',
         item2Description: 'Advanced robots are becoming essential across factories, logistics and everyday life.',
         item2Image: values.image || values.productImageUrl || undefined,
         item2AccentText: '#2',
-        item1Title: 'Generative AI',
+        item1Title: values.item1Title?.trim() || values.feature1?.trim() || 'Generative AI',
         item1Description: 'Generative AI is transforming software, creativity and the way businesses work.',
         item1Image: values.image || values.productImageUrl || undefined,
         item1AccentText: '#1',
@@ -126,10 +126,14 @@ export function toVideoContent(
     }
     case 'top-10-countdown': {
       const rankValue = typeof values.rank === 'number' && Number.isFinite(values.rank) ? values.rank : 10;
-      void rankValue;
       return {
         ...content,
         headline: values.headline.trim() || 'TOP 10',
+        listTitle: values.listTitle.trim() || 'Top 10 Rankings',
+        rank: rankValue,
+        itemTitle: values.itemTitle.trim() || values.productName.trim() || 'Ranked Item',
+        statisticLabel: values.statisticLabel.trim() || undefined,
+        accentText: values.accentText.trim() || undefined,
         product: {
           ...content.product,
           name: values.itemTitle.trim() || values.productName.trim() || 'Ranked Item',
@@ -180,6 +184,8 @@ export function toVideoContent(
           ...content.product,
           name: values.productName.trim() || content.product.name || 'Untitled',
           description: values.description.trim() || undefined,
+          location: values.location?.trim() || values.productName?.trim() || 'Pacific Ocean Abyss',
+          dateFrom: values.year ? parseInt(values.year, 10) : 1982,
         },
       };
     }
@@ -189,48 +195,91 @@ export function toVideoContent(
         brand: {
           ...content.brand,
           name: values.brandName.trim() || content.brand.name || 'Luxury Brand',
+          tagline: values.tagline.trim() || undefined,
         },
         product: {
           ...content.product,
           name: values.productName.trim() || content.product.name || 'Luxury Product',
           description: values.description.trim() || undefined,
+          imageUrl: values.productImageUrl || undefined,
         },
+        headline: values.headline.trim() || values.tagline.trim() || undefined,
+        cta: {
+          ...content.cta,
+          text: values.ctaText.trim() || 'Discover Collection',
+        },
+      };
+    }
+    case 'fashion-lookbook': {
+      return {
+        ...content,
+        season: values.tagline.trim() || 'AUTUMN / WINTER',
+        lookNumber: values.lookNumber?.trim() || values.category.trim() || 'LOOK 01',
+      };
+    }
+    case 'podcast-highlight': {
+      return {
+        ...content,
+        speaker: values.speaker?.trim() || values.speakerName?.trim() || 'Dr. Elena Vance',
+        episodeNumber: values.episodeNumber?.trim() || 'EP. 142',
+      };
+    }
+    case 'tech-product-launch': {
+      return {
+        ...content,
+        version: values.version?.trim() || 'v4.0 RELEASE',
+        codeSnippet: values.codeSnippet || '// Initialize Nexus Engine\nconst engine = new NexusEngine({\n  stream: true,\n  latency: "ultra-low"\n});',
+      };
+    }
+    case 'real-estate-showcase': {
+      return {
+        ...content,
+        location: values.location.trim() || 'Beverly Hills, CA',
+        agentName: values.agentName?.trim() || 'Sarah Jenkins',
+        agentPhone: values.agentPhone?.trim() || '+1 (800) 555-REAL',
+      };
+    }
+    case 'fitness-motivation': {
+      return {
+        ...content,
+        statNumber: values.statNumber?.trim() || '100%',
+        statLabel: values.statLabel?.trim() || 'PURE PERFORMANCE',
       };
     }
     case 'gaming-stream-highlight': {
       return {
         ...content,
-        gamerTag: values.headline.trim() || 'SHADOW_NEXUS',
-        score: '99,450 XP',
-        gameName: values.productName.trim() || 'VALORANT PRO LEAGUE',
+        gamerTag: values.gamerTag?.trim() || values.headline.trim() || 'SHADOW_NEXUS',
+        score: values.score?.trim() || '99,450 XP',
+        gameName: values.gameName?.trim() || values.gameTitle?.trim() || values.productName.trim() || 'VALORANT PRO LEAGUE',
       };
     }
     case 'youtube-shorts-viral-hook': {
       return {
         ...content,
         headline: values.headline.trim() || 'STOP SCROLLING! THIS CHANGES EVERYTHING 🚀',
-        audioWaveformText: values.title.trim() || 'AUDIO INSIGHT PRO',
+        audioWaveformText: values.audioWaveformText?.trim() || values.title.trim() || 'AUDIO INSIGHT PRO',
       };
     }
     case 'tech-tutorial-explainer': {
       return {
         ...content,
         codeSnippet: values.codeSnippet || `// initialize video worker pipeline\nconst task = await renderMedia({\n  composition: 'TechTutorial',\n  inputProps: { theme: 'dark' }\n});`,
-        versionBadge: values.version || 'v4.2 FULL GUIDE',
+        versionBadge: values.versionBadge?.trim() || values.version?.trim() || 'v4.2 FULL GUIDE',
       };
     }
     case 'youtube-vlog-intro': {
       return {
         ...content,
         locationStamp: values.location.trim() || 'TOKYO, JAPAN 35.6762° N',
-        seasonTag: 'SEASON 4 • EP. 12',
+        seasonTag: values.seasonTag?.trim() || 'SEASON 4 • EP. 12',
       };
     }
     case 'finance-crypto-explainer': {
       return {
         ...content,
         marketTicker: values.tickerText.trim() || 'BTC $95.4K (+4.2%) • ETH $3.8K (+6.1%) • SOL $210 (+8.4%)',
-        growthStat: '+14.8%',
+        growthStat: values.growthStat?.trim() || '+14.8%',
       };
     }
     case 'creative-portfolio-showcase': {
@@ -284,7 +333,7 @@ export function toVideoContent(
       return {
         ...content,
         headline: values.headline.trim() || values.tagline.trim() || 'LIVE VIRTUAL & IN-PERSON SUMMIT',
-        eventDate: values.date?.trim() || 'OCTOBER 24-25, 2026',
+        eventDate: values.eventDate?.trim() || values.date?.trim() || 'OCTOBER 24-25, 2026',
         speakerName: values.speakerName?.trim() || 'Dr. Marcus Vance (Keynote)',
         product: {
           ...content.product,
@@ -297,205 +346,210 @@ export function toVideoContent(
       return {
         ...content,
         thanksMessage: values.headline.trim() || 'THANKS FOR WATCHING!',
-        nextVideoTitle: values.productName.trim() || 'Top 10 AI Secrets Revealed',
+        nextVideoTitle: values.nextVideoTitle?.trim() || values.productName.trim() || 'Top 10 AI Secrets Revealed',
+        subscribersCount: values.subscribersCount?.trim() || '1.25M SUBSCRIBERS',
       };
     }
     case 'youtube-tech-review-unboxing': {
       return {
         ...content,
-        techCategory: values.category.trim() || 'FLAGSHIP SMARTPHONE REVIEW',
-        ratingScore: '9.4 / 10',
+        techCategory: values.techCategory?.trim() || values.category.trim() || 'FLAGSHIP SMARTPHONE REVIEW',
+        ratingScore: values.ratingScore?.trim() || '9.4 / 10',
+        pros: features.length > 0 ? features : undefined,
       };
     }
     case 'youtube-shorts-facts-quiz': {
       return {
         ...content,
-        questionText: values.headline.trim() || 'Which planet in our solar system spins backwards compared to all others?',
+        questionText: values.questionText?.trim() || values.headline.trim() || 'Which planet in our solar system spins backwards compared to all others?',
         options: [
           values.feature1.trim() || 'A) Mars 🔴',
           values.feature2.trim() || 'B) Venus 🪐',
           values.feature3.trim() || 'C) Jupiter ⚡',
         ],
-        explanationText: values.description.trim() || 'ANSWER: Venus spins clockwise on its axis!',
+        explanationText: values.explanationText?.trim() || values.description.trim() || 'ANSWER: Venus spins clockwise on its axis!',
       };
     }
     case 'youtube-gaming-montage-intro': {
       return {
         ...content,
-        gamerTag: values.headline.trim() || 'VORTEX_NEXUS #1337',
-        rankBadge: values.category.trim() || 'GLOBAL RADIANT #1',
-        killStreakCount: values.feature1.trim() || '52 KILLS • 0 DEATHS',
-        gameTitle: values.productName.trim() || 'VALORANT COMPETITIVE',
+        gamerTag: values.gamerTag?.trim() || values.headline.trim() || 'VORTEX_NEXUS #1337',
+        rankBadge: values.rankBadge?.trim() || values.category.trim() || 'GLOBAL RADIANT #1',
+        killStreakCount: values.killStreakCount?.trim() || values.feature1.trim() || '52 KILLS • 0 DEATHS',
+        gameTitle: values.gameTitle?.trim() || values.productName.trim() || 'VALORANT COMPETITIVE',
       };
     }
     case 'youtube-podcast-video-intro': {
       return {
         ...content,
-        podcastTitle: values.brandName.trim() || 'THE DEEP DIVE SHOW',
-        hostName: values.speakerName?.trim() || 'Host: Marcus Vance',
-        topicTagline: values.headline.trim() || 'THE AGI REVOLUTION IS HERE',
+        podcastTitle: values.podcastTitle?.trim() || values.brandName.trim() || 'THE DEEP DIVE SHOW',
+        hostName: values.hostName?.trim() || values.speakerName?.trim() || 'Host: Marcus Vance',
+        topicTagline: values.topicTagline?.trim() || values.headline.trim() || 'THE AGI REVOLUTION IS HERE',
       };
     }
     case 'youtube-fitness-workout-timer': {
       return {
         ...content,
-        exerciseName: values.headline.trim() || 'JUMPING JACKS & BURPEES',
-        caloriesBurned: values.description.trim() || 'EST. 350 KCAL BURN',
-        nextExerciseName: values.feature1.trim() || 'NEXT: High Knee Sprints 🏃‍♂️',
+        exerciseName: values.exerciseName?.trim() || values.headline.trim() || 'JUMPING JACKS & BURPEES',
+        caloriesBurned: values.caloriesBurned?.trim() || values.description.trim() || 'EST. 350 KCAL BURN',
+        nextExerciseName: values.nextExerciseName?.trim() || values.feature1.trim() || 'NEXT: High Knee Sprints 🏃‍♂️',
+        timerDurationSeconds: typeof values.timerDurationSeconds === 'number' ? values.timerDurationSeconds : 45,
       };
     }
     case 'youtube-cinematic-travel-opener': {
       return {
         ...content,
-        gpsCoordinates: values.location.trim() || '45.9765° N, 7.7491° E',
-        filmTitle: values.headline.trim() || 'THE SWISS ALPS',
-        cinematicTagline: values.description.trim() || 'WHERE HEAVEN TOUCHES THE EARTH',
+        gpsCoordinates: values.gpsCoordinates?.trim() || values.location.trim() || '45.9765° N, 7.7491° E',
+        altitudeMetres: values.altitudeMetres?.trim() || 'ALTITUDE: 3,842 METRES',
+        filmTitle: values.filmTitle?.trim() || values.headline.trim() || 'THE SWISS ALPS',
+        cinematicTagline: values.cinematicTagline?.trim() || values.description.trim() || 'WHERE HEAVEN TOUCHES THE EARTH',
       };
     }
     case 'youtube-news-commentary-lowerthird': {
       return {
         ...content,
-        topicChapterTag: values.headline.trim() || 'CHAPTER 2: FABRICATION BOTTLENECKS',
-        commentatorName: 'Evelyn Reed',
-        commentatorTitle: 'Senior Tech Policy Analyst',
-        sourceCitationText: values.source.trim() || 'SOURCE: Bloomberg Intelligence',
+        topicChapterTag: values.topicChapterTag?.trim() || values.headline.trim() || 'CHAPTER 2: FABRICATION BOTTLENECKS',
+        commentatorName: values.commentatorName?.trim() || 'Evelyn Reed',
+        commentatorTitle: values.commentatorTitle?.trim() || 'Senior Tech Policy Analyst',
+        sourceCitationText: values.sourceCitationText?.trim() || values.source.trim() || 'SOURCE: Bloomberg Intelligence',
       };
     }
     case 'youtube-lofi-music-visualizer': {
       return {
         ...content,
-        trackTitle: values.headline.trim() || 'Late Night Coffee & Raindrops 🌧️',
-        streamSchedule: values.tickerText.trim() || 'LIVE NOW • 24/7 STUDY BEATS',
+        trackTitle: values.trackTitle?.trim() || values.headline.trim() || 'Late Night Coffee & Raindrops 🌧️',
+        artistName: values.artistName?.trim() || values.speakerName?.trim() || 'Lofi Girl & Chillhop Music',
+        streamSchedule: values.streamSchedule?.trim() || values.tickerText.trim() || 'LIVE NOW • 24/7 STUDY BEATS',
       };
     }
     case 'youtube-motivation-quote-shorts': {
       return {
         ...content,
-        quoteText: values.headline.trim() || 'The mind is everything. What you think, you become.',
-        quoteAuthor: '— Buddha',
-        keyMindsetPoint: `${values.feature1 || '1. Master Your Thoughts'} • ${values.feature2 || '2. Take Relentless Action'} • ${values.feature3 || '3. Never Settle'}`,
+        quoteText: values.quoteText?.trim() || values.headline.trim() || 'The mind is everything. What you think, you become.',
+        quoteAuthor: values.quoteAuthor?.trim() || '— Buddha',
+        keyMindsetPoint: values.keyMindsetPoint?.trim() || `${values.feature1 || '1. Master Your Thoughts'} • ${values.feature2 || '2. Take Relentless Action'} • ${values.feature3 || '3. Never Settle'}`,
       };
     }
     case 'youtube-cooking-recipe-card': {
       return {
         ...content,
-        recipeName: values.productName.trim() || 'Creamy Garlic Butter Tuscan Salmon',
-        prepTime: '20 MINS PREP',
-        servings: '4 SERVINGS',
+        recipeName: values.recipeName?.trim() || values.productName.trim() || 'Creamy Garlic Butter Tuscan Salmon',
+        prepTime: values.prepTime?.trim() || '20 MINS PREP',
+        servings: values.servings?.trim() || '4 SERVINGS',
         ingredientsList: [values.feature1 || '4 Salmon Filets', values.feature2 || '3 Garlic Cloves', values.feature3 || 'Cream & Spinach'],
       };
     }
     case 'youtube-diy-craft-tutorial': {
       return {
         ...content,
-        craftTitle: values.productName.trim() || 'DIY Origami Floating Flower Lanterns',
-        difficultyLevel: 'EASY • 15 MINS',
+        craftTitle: values.craftTitle?.trim() || values.productName.trim() || 'DIY Origami Floating Flower Lanterns',
+        difficultyLevel: values.difficultyLevel?.trim() || 'EASY • 15 MINS',
         materialsNeeded: [values.feature1 || 'Craft Paper', values.feature2 || 'Scissors & Tape', values.feature3 || 'Tea Light Candle'],
-        stepCount: '4 SIMPLE STEPS',
+        stepCount: values.stepCount?.trim() || '4 SIMPLE STEPS',
       };
     }
     case 'youtube-movie-review-rating': {
       return {
         ...content,
-        movieTitle: values.productName.trim() || 'DUNE: PART THREE',
-        criticScore: '96% CERTIFIED FRESH',
-        audienceScore: '94% AUDIENCE SCORE',
-        verdictBadge: 'MUST WATCH CINEMATIC MASTERPIECE',
+        movieTitle: values.movieTitle?.trim() || values.productName.trim() || 'DUNE: PART THREE',
+        criticScore: values.criticScore?.trim() || '96% CERTIFIED FRESH',
+        audienceScore: values.audienceScore?.trim() || '94% AUDIENCE SCORE',
+        verdictBadge: values.verdictBadge?.trim() || 'MUST WATCH CINEMATIC MASTERPIECE',
       };
     }
     case 'youtube-car-auto-review': {
       return {
         ...content,
-        carModelName: values.productName.trim() || 'Apex GT Supercar 2026',
-        accelerationStat: '0-60 MPH: 2.7 SECS',
-        horsepowerStat: '850 HORSEPOWER',
-        topSpeedStat: 'TOP SPEED: 215 MPH',
+        carModelName: values.carModelName?.trim() || values.productName.trim() || 'Apex GT Supercar 2026',
+        accelerationStat: values.accelerationStat?.trim() || '0-60 MPH: 2.7 SECS',
+        horsepowerStat: values.horsepowerStat?.trim() || '850 HORSEPOWER',
+        topSpeedStat: values.topSpeedStat?.trim() || 'TOP SPEED: 215 MPH',
       };
     }
     case 'youtube-crypto-trading-signals': {
       return {
         ...content,
-        pairSymbol: 'BTC / USDT 🟢',
-        entryTargetPrice: 'ENTRY: $94,500 • TARGET: $105,000',
-        profitPercentage: '+112% GAINS',
-        leverageTag: '10X LEVERAGE SETUP',
+        pairSymbol: values.pairSymbol?.trim() || 'BTC / USDT 🟢',
+        entryTargetPrice: values.entryTargetPrice?.trim() || 'ENTRY: $94,500 • TARGET: $105,000',
+        profitPercentage: values.profitPercentage?.trim() || '+112% GAINS',
+        leverageTag: values.leverageTag?.trim() || '10X LEVERAGE SETUP',
       };
     }
     case 'youtube-coding-project-showcase': {
       return {
         ...content,
-        repoName: 'mozammal01 / Vivid-AI',
-        githubStars: '2,450 GITHUB STARS',
-        techStackTags: ['Next.js 15', 'Remotion 4', 'TypeScript', 'Tailwind CSS'],
-        terminalCommand: 'git clone https://github.com/mozammal01/Vivid-AI.git',
+        repoName: values.repoName?.trim() || 'mozammal01 / Vivid-AI',
+        githubStars: values.githubStars?.trim() || '2,450 GITHUB STARS',
+        techStackTags: [values.feature1 || 'Next.js 15', values.feature2 || 'Remotion 4', values.feature3 || 'TypeScript'],
+        terminalCommand: values.terminalCommand?.trim() || 'git clone https://github.com/mozammal01/Vivid-AI.git',
       };
     }
     case 'youtube-anime-manga-top-list': {
       return {
         ...content,
-        animeTitle: 'SOLO LEVELING • SEASON 2',
-        characterName: 'Sung Jin-woo (Shadow Monarch)',
-        powerLevelScore: 'POWER LEVEL: 99,999 S-RANK',
-        studioName: 'A-1 PICTURES ANIMATION',
+        animeTitle: values.animeTitle?.trim() || 'SOLO LEVELING • SEASON 2',
+        characterName: values.characterName?.trim() || 'Sung Jin-woo (Shadow Monarch)',
+        powerLevelScore: values.powerLevelScore?.trim() || 'POWER LEVEL: 99,999 S-RANK',
+        studioName: values.studioName?.trim() || 'A-1 PICTURES ANIMATION',
       };
     }
     case 'youtube-real-estate-property-tour': {
       return {
         ...content,
-        propertyName: values.productName.trim() || 'The Beverly Hills Modern Glass Mansion',
-        propertyPriceTag: values.price?.trim() || '$12,950,000 LISTING',
-        propertySpecs: ['6 Bedrooms & 8 Bathrooms', '9,500 Sq Ft Living Area', 'Infinity Edge Pool', '10-Car Garage'],
-        realtorContact: 'Listed by Luxury Homes Media',
+        propertyName: values.propertyName?.trim() || values.productName.trim() || 'The Beverly Hills Modern Glass Mansion',
+        propertyPriceTag: values.propertyPriceTag?.trim() || values.price?.trim() || '$12,950,000 LISTING',
+        propertySpecs: [values.feature1 || '6 Bedrooms & 8 Bathrooms', values.feature2 || '9,500 Sq Ft Living Area', values.feature3 || 'Infinity Edge Pool'],
+        realtorContact: values.realtorContact?.trim() || values.speakerName?.trim() || 'Listed by Luxury Homes Media',
       };
     }
     case 'youtube-life-hacks-tips': {
       return {
         ...content,
-        hackTitle: values.productName.trim() || 'THE BREAD CLIP CABLE HACK',
-        problemStatement: values.headline.trim() || 'Tired of messy cables tangling behind your desk?',
-        solutionHack: values.description.trim() || 'Use plastic bread tags to label and organize all power cables instantly!',
-        hackDifficulty: 'DIFFICULTY: SUPER EASY • COST: $0',
+        hackTitle: values.hackTitle?.trim() || values.productName.trim() || 'THE BREAD CLIP CABLE HACK',
+        problemStatement: values.problemStatement?.trim() || values.headline.trim() || 'Tired of messy cables tangling behind your desk?',
+        solutionHack: values.solutionHack?.trim() || values.description.trim() || 'Use plastic bread tags to label and organize all power cables instantly!',
+        hackDifficulty: values.hackDifficulty?.trim() || 'DIFFICULTY: SUPER EASY • COST: $0',
       };
     }
     case 'youtube-top-trending-news': {
       return {
         ...content,
-        trendingTopic: '#1 TRENDING WORLDWIDE',
-        viralCountText: '14.2 MILLION VIEWS IN 2 HOURS',
-        socialPostSnippet: '"I cannot believe this actually happened live on stream today..." — @ViralCreator',
+        trendingTopic: values.trendingTopic?.trim() || '#1 TRENDING WORLDWIDE',
+        viralCountText: values.viralCountText?.trim() || '14.2 MILLION VIEWS IN 2 HOURS',
+        socialPostSnippet: values.socialPostSnippet?.trim() || '"I cannot believe this actually happened live on stream today..." — @ViralCreator',
       };
     }
     case 'youtube-history-storytelling': {
       return {
         ...content,
-        eraTimestamp: '48 BC • ALEXANDRIA, EGYPT',
-        historicalEventName: values.productName.trim() || 'THE BURNING OF THE GREAT LIBRARY',
-        historicalQuote: '"He who controls the past controls the future. He who controls the present controls the past."',
+        eraTimestamp: values.eraTimestamp?.trim() || '48 BC • ALEXANDRIA, EGYPT',
+        historicalEventName: values.historicalEventName?.trim() || values.productName.trim() || 'THE BURNING OF THE GREAT LIBRARY',
+        historicalQuote: values.historicalQuote?.trim() || '"He who controls the past controls the future. He who controls the present controls the past."',
       };
     }
     case 'youtube-beauty-makeup-tutorial': {
       return {
         ...content,
-        lookName: values.productName.trim() || 'SUNSET GLOW SOFT GLAM',
-        paletteColors: ['Peach Nude', 'Rose Gold Shimmer', 'Deep Berry Velvet'],
-        discountCodeTag: 'USE CODE: GLAM20 FOR 20% OFF',
+        lookName: values.lookName?.trim() || values.productName.trim() || 'SUNSET GLOW SOFT GLAM',
+        paletteColors: [values.feature1 || 'Peach Nude', values.feature2 || 'Rose Gold Shimmer', values.feature3 || 'Deep Berry Velvet'],
+        discountCodeTag: values.discountCodeTag?.trim() || 'USE CODE: GLAM20 FOR 20% OFF',
       };
     }
     case 'youtube-asmr-relaxation': {
       return {
         ...content,
-        soundTriggerName: values.productName.trim() || 'HEAVY RAIN & SOFT GLASS TAPPING',
-        binauralTag: '3D BINAURAL SPATIAL AUDIO',
-        ambientCategory: 'DEEP SLEEP & ANXIETY RELIEF',
+        soundTriggerName: values.soundTriggerName?.trim() || values.productName.trim() || 'HEAVY RAIN & SOFT GLASS TAPPING',
+        binauralTag: values.binauralTag?.trim() || '3D BINAURAL SPATIAL AUDIO',
+        ambientCategory: values.ambientCategory?.trim() || 'DEEP SLEEP & ANXIETY RELIEF',
       };
     }
     case 'youtube-business-case-study': {
       return {
         ...content,
-        companyName: 'AIRBNB CASE STUDY',
-        valuationStat: '$85 BILLION MARKET CAP',
-        keyGrowthDrivers: ['Craigslist Cross-Posting Growth Hack', 'Professional Photography Initiative', 'User Trust Infrastructure'],
-        takeawayConclusion: 'KEY TAKEAWAY: Focus on building 100 people who love your product.',
+        companyName: values.companyName?.trim() || 'AIRBNB CASE STUDY',
+        valuationStat: values.valuationStat?.trim() || '$85 BILLION MARKET CAP',
+        keyGrowthDrivers: [values.feature1 || 'Craigslist Cross-Posting Growth Hack', values.feature2 || 'Professional Photography Initiative', values.feature3 || 'User Trust Infrastructure'],
+        takeawayConclusion: values.takeawayConclusion?.trim() || 'KEY TAKEAWAY: Focus on building 100 people who love your product.',
       };
     }
     default:
