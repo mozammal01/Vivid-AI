@@ -39,6 +39,8 @@ export interface ResponsiveLayout {
   bodyFontSize: number;
   /** Responsive button font size in pixels. */
   buttonFontSize: number;
+  /** Responsive badge font size in pixels. */
+  badgeFontSize: number;
   /** Whether the canvas is tall and narrow (9:16). */
   isPortrait: boolean;
   /** Whether the canvas is square (1:1). */
@@ -111,6 +113,7 @@ export function useResponsiveLayout(): ResponsiveLayout {
   const subtitleFontSize = Math.round(28 * fontScale);
   const bodyFontSize = Math.round(20 * fontScale);
   const buttonFontSize = Math.round(22 * fontScale);
+  const badgeFontSize = Math.round(14 * fontScale);
 
   return {
     mode,
@@ -129,6 +132,7 @@ export function useResponsiveLayout(): ResponsiveLayout {
     subtitleFontSize,
     bodyFontSize,
     buttonFontSize,
+    badgeFontSize,
     isPortrait,
     isSquare,
     isLandscape,

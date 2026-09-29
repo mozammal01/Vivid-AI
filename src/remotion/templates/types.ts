@@ -29,7 +29,31 @@ export type TemplateId =
   | 'saas-product-ad'
   | 'course-masterclass-promo'
   | 'ecommerce-flash-sale'
-  | 'event-webinar-teaser';
+  | 'event-webinar-teaser'
+  | 'youtube-outro-endcard'
+  | 'youtube-tech-review-unboxing'
+  | 'youtube-shorts-facts-quiz'
+  | 'youtube-gaming-montage-intro'
+  | 'youtube-podcast-video-intro'
+  | 'youtube-fitness-workout-timer'
+  | 'youtube-cinematic-travel-opener'
+  | 'youtube-news-commentary-lowerthird'
+  | 'youtube-lofi-music-visualizer'
+  | 'youtube-motivation-quote-shorts'
+  | 'youtube-cooking-recipe-card'
+  | 'youtube-diy-craft-tutorial'
+  | 'youtube-movie-review-rating'
+  | 'youtube-car-auto-review'
+  | 'youtube-crypto-trading-signals'
+  | 'youtube-coding-project-showcase'
+  | 'youtube-anime-manga-top-list'
+  | 'youtube-real-estate-property-tour'
+  | 'youtube-life-hacks-tips'
+  | 'youtube-top-trending-news'
+  | 'youtube-history-storytelling'
+  | 'youtube-beauty-makeup-tutorial'
+  | 'youtube-asmr-relaxation'
+  | 'youtube-business-case-study';
 
 /**
  * Serializable template metadata — everything the app needs to know about a

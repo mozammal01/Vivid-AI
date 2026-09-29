@@ -20,7 +20,6 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { name: "Home Page", href: "/", icon: Home },
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { name: "Create Video", href: "/create-video", icon: Video },
   { name: "Templates", href: "/dashboard/templates", icon: Layers },
@@ -29,6 +28,7 @@ const navItems = [
 ];
 
 import { GlobalSearchModal } from "@/components/search/GlobalSearchModal";
+import { templateList } from "@/remotion/templates";
 
 export default function DashboardLayout({
   children,
@@ -229,7 +229,7 @@ export default function DashboardLayout({
             >
               <div className="flex items-center gap-2">
                 <Search className="w-3.5 h-3.5 text-primary group-hover:scale-110 transition-transform" />
-                <span>Search 26 templates, videos...</span>
+                <span>Search {templateList.length} templates, videos...</span>
               </div>
               <kbd className="px-1.5 py-0.5 text-[10px] font-mono font-semibold rounded bg-card border border-border text-foreground/80">⌘K</kbd>
             </button>

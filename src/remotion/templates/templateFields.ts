@@ -370,6 +370,210 @@ const eventWebinarTeaserFields: TemplateFieldDefinition[] = [
   { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. RESERVE YOUR FREE SPOT 🎟️', section: 'Call to Action', defaultValue: 'RESERVE YOUR FREE SPOT 🎟️' },
 ];
 
+const youtubeOutroEndcardFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Channel Name', type: 'text', required: true, placeholder: 'e.g. CREATOR HUB', section: 'Channel', defaultValue: 'CREATOR HUB' },
+  { key: 'tagline', label: 'Upload Schedule', type: 'text', required: false, placeholder: 'e.g. NEW VIDEOS EVERY TUESDAY', section: 'Channel' },
+  { key: 'headline', label: 'Thanks Message', type: 'text', required: true, placeholder: 'e.g. THANKS FOR WATCHING!', section: 'Message', defaultValue: 'THANKS FOR WATCHING!' },
+  { key: 'productName', label: 'Next Video Title', type: 'text', required: false, placeholder: 'e.g. NEXT EPISODE: Master AI Tools', section: 'Video Cards' },
+  { key: 'subscribersCount' as any, label: 'Subscribers Count Tag', type: 'text', required: false, placeholder: 'e.g. 524,000 SUBSCRIBERS', section: 'Channel', defaultValue: '524,000 SUBSCRIBERS' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE FOR MORE 🔔', section: 'Call to Action', defaultValue: 'SUBSCRIBE FOR MORE 🔔' },
+];
+
+const youtubeTechReviewUnboxingFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Channel / Show Name', type: 'text', required: true, placeholder: 'e.g. TECH UNBOXED', section: 'Channel', defaultValue: 'TECH UNBOXED ⚡' },
+  { key: 'productName', label: 'Product / Gadget Name', type: 'text', required: true, placeholder: 'e.g. CyberPhone Pro Ultra', section: 'Gadget', defaultValue: 'CyberPhone Pro Ultra 2026' },
+  { key: 'description', label: 'Product Summary', type: 'textarea', required: false, placeholder: 'Short tech summary', section: 'Gadget' },
+  { key: 'price', label: 'Product Price', type: 'text', required: false, placeholder: 'e.g. $1,199', section: 'Gadget' },
+  { key: 'productImageUrl', label: 'Gadget Photo', type: 'image', required: false, section: 'Media', imageLabel: 'Gadget image' },
+  { key: 'category', label: 'Tech Category Tag', type: 'text', required: false, placeholder: 'e.g. FLAGSHIP SMARTPHONE REVIEW', section: 'Review' },
+  { key: 'ratingScore' as any, label: 'Rating Score', type: 'text', required: false, placeholder: 'e.g. 9.4 / 10', section: 'Review', defaultValue: '9.4 / 10' },
+  { key: 'feature1', label: 'Pro Point 1', type: 'text', required: false, placeholder: 'e.g. 160Hz OLED Display', section: 'Pros' },
+  { key: 'feature2', label: 'Pro Point 2', type: 'text', required: false, placeholder: 'e.g. 3-Day Battery Life', section: 'Pros' },
+  { key: 'feature3', label: 'Con Point 1', type: 'text', required: false, placeholder: 'e.g. Premium price tag', section: 'Cons' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. FULL REVIEW ON YOUTUBE 🍿', section: 'Call to Action', defaultValue: 'FULL REVIEW ON YOUTUBE 🍿' },
+];
+
+const youtubeShortsFactsQuizFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Trivia Channel Name', type: 'text', required: true, placeholder: 'e.g. DAILY TRIVIA SHORTS', section: 'Channel', defaultValue: 'DAILY TRIVIA SHORTS 🧠' },
+  { key: 'headline', label: 'Quiz Question', type: 'textarea', required: true, placeholder: 'e.g. Which planet spins backwards?', section: 'Question', defaultValue: 'Which planet in our solar system spins backwards compared to all others?' },
+  { key: 'feature1', label: 'Option A', type: 'text', required: false, placeholder: 'e.g. A) Mars', section: 'Options', defaultValue: 'A) Mars 🔴' },
+  { key: 'feature2', label: 'Option B (Correct)', type: 'text', required: false, placeholder: 'e.g. B) Venus', section: 'Options', defaultValue: 'B) Venus 🪐' },
+  { key: 'feature3', label: 'Option C', type: 'text', required: false, placeholder: 'e.g. C) Jupiter', section: 'Options', defaultValue: 'C) Jupiter ⚡' },
+  { key: 'description', label: 'Explanation / Answer Pop', type: 'textarea', required: false, placeholder: 'Answer explanation text', section: 'Answer', defaultValue: 'ANSWER: Venus spins clockwise on its axis!' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE FOR DAILY QUIZZES 🔔', section: 'Call to Action', defaultValue: 'SUBSCRIBE FOR DAILY QUIZZES 🔔' },
+];
+
+const youtubeGamingMontageIntroFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Gamer / Team Name', type: 'text', required: true, placeholder: 'e.g. VORTEX GAMING', section: 'Gaming', defaultValue: 'VORTEX GAMING 🎮' },
+  { key: 'headline', label: 'Gamer Tag', type: 'text', required: true, placeholder: 'e.g. VORTEX_NEXUS #1337', section: 'Gamer Profile', defaultValue: 'VORTEX_NEXUS #1337' },
+  { key: 'productName', label: 'Montage / Game Title', type: 'text', required: true, placeholder: 'e.g. VALORANT RADIANT HIGHLIGHTS', section: 'Montage', defaultValue: 'VALORANT RADIANT HIGHLIGHTS' },
+  { key: 'description', label: 'Montage Description', type: 'textarea', required: false, placeholder: 'Episode details', section: 'Montage' },
+  { key: 'category', label: 'Rank Badge', type: 'text', required: false, placeholder: 'e.g. GLOBAL RADIANT #1', section: 'Gamer Profile', defaultValue: 'GLOBAL RADIANT #1' },
+  { key: 'feature1', label: 'Kill Streak / Stat', type: 'text', required: false, placeholder: 'e.g. 52 KILLS • 0 DEATHS', section: 'Stats', defaultValue: '52 KILLS • 0 DEATHS' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE FOR DAILY CLUTCHES ⚡', section: 'Call to Action', defaultValue: 'SUBSCRIBE FOR DAILY CLUTCHES ⚡' },
+];
+
+const youtubePodcastVideoIntroFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Podcast Show Title', type: 'text', required: true, placeholder: 'e.g. THE DEEP DIVE SHOW', section: 'Podcast', defaultValue: 'THE DEEP DIVE SHOW' },
+  { key: 'headline', label: 'Episode Tagline', type: 'text', required: true, placeholder: 'e.g. THE AGI REVOLUTION IS HERE', section: 'Episode', defaultValue: 'THE AGI REVOLUTION IS HERE' },
+  { key: 'productName', label: 'Episode Topic Title', type: 'text', required: true, placeholder: 'e.g. The Future of AGI', section: 'Episode', defaultValue: 'The Future of Artificial General Intelligence' },
+  { key: 'speakerName', label: 'Host Name', type: 'text', required: false, placeholder: 'e.g. Host: Marcus Vance', section: 'Speakers', defaultValue: 'Host: Marcus Vance' },
+  { key: 'speaker' as any, label: 'Guest Name', type: 'text', required: false, placeholder: 'e.g. Guest: Dr. Sarah Chen', section: 'Speakers', defaultValue: 'Guest: Dr. Sarah Chen' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. LISTEN & SUBSCRIBE ON YOUTUBE 🍿', section: 'Call to Action', defaultValue: 'LISTEN & SUBSCRIBE ON YOUTUBE 🍿' },
+];
+
+const youtubeFitnessWorkoutTimerFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Fitness Brand Name', type: 'text', required: true, placeholder: 'e.g. SHRED 30 FITNESS', section: 'Brand', defaultValue: 'SHRED 30 FITNESS 🔥' },
+  { key: 'productName', label: 'Workout Session Title', type: 'text', required: true, placeholder: 'e.g. FULL BODY FAT BURN WORKOUT', section: 'Workout', defaultValue: 'FULL BODY FAT BURN WORKOUT' },
+  { key: 'headline', label: 'Exercise Name', type: 'text', required: true, placeholder: 'e.g. JUMPING JACKS & BURPEES', section: 'Exercise', defaultValue: 'JUMPING JACKS & BURPEES' },
+  { key: 'description', label: 'Calorie Burn Tag', type: 'text', required: false, placeholder: 'e.g. EST. 350 KCAL BURN', section: 'Exercise', defaultValue: 'EST. 350 KCAL BURN' },
+  { key: 'feature1', label: 'Next Exercise Teaser', type: 'text', required: false, placeholder: 'e.g. NEXT: High Knee Sprints 🏃‍♂️', section: 'Exercise', defaultValue: 'NEXT: High Knee Sprints 🏃‍♂️' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE FOR DAILY WORKOUTS 🏋️', section: 'Call to Action', defaultValue: 'SUBSCRIBE FOR DAILY WORKOUTS 🏋️' },
+];
+
+const youtubeCinematicTravelOpenerFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Film Channel Name', type: 'text', required: true, placeholder: 'e.g. WILD EXPLORER FILMS', section: 'Channel', defaultValue: 'WILD EXPLORER FILMS ✈️' },
+  { key: 'headline', label: 'Film Title', type: 'text', required: true, placeholder: 'e.g. THE SWISS ALPS', section: 'Film', defaultValue: 'THE SWISS ALPS' },
+  { key: 'productName', label: 'Expedition Title', type: 'text', required: true, placeholder: 'e.g. SWITZERLAND ALPS EXPEDITION', section: 'Film', defaultValue: 'SWITZERLAND ALPS EXPEDITION' },
+  { key: 'location', label: 'GPS Coordinates', type: 'text', required: false, placeholder: 'e.g. 45.9765° N, 7.7491° E', section: 'Location', defaultValue: '45.9765° N, 7.7491° E' },
+  { key: 'description', label: 'Cinematic Tagline', type: 'text', required: false, placeholder: 'e.g. WHERE HEAVEN TOUCHES THE EARTH', section: 'Film', defaultValue: 'WHERE HEAVEN TOUCHES THE EARTH' },
+  { key: 'productImageUrl', label: 'Hero Landscape Photo', type: 'image', required: false, section: 'Media', imageLabel: 'Landscape photo' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. WATCH THE FULL CINEMATIC FILM 🍿', section: 'Call to Action', defaultValue: 'WATCH THE FULL CINEMATIC FILM 🍿' },
+];
+
+const youtubeNewsCommentaryLowerthirdFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Channel / Essay Series', type: 'text', required: true, placeholder: 'e.g. EXPLAINER ESSAYS', section: 'Series', defaultValue: 'EXPLAINER ESSAYS 🧠' },
+  { key: 'productName', label: 'Video Essay Title', type: 'text', required: true, placeholder: 'e.g. How Semiconductor Supply Chains Rule', section: 'Essay', defaultValue: 'How Semiconductor Supply Chains Rule Global Geopolitics' },
+  { key: 'headline', label: 'Chapter Badge', type: 'text', required: false, placeholder: 'e.g. CHAPTER 2: FABRICATION BOTTLENECKS', section: 'Essay', defaultValue: 'CHAPTER 2: FABRICATION BOTTLENECKS' },
+  { key: 'commentatorName' as any, label: 'Speaker / Analyst Name', type: 'text', required: false, placeholder: 'e.g. Evelyn Reed', section: 'Lower Third', defaultValue: 'Evelyn Reed' },
+  { key: 'commentatorTitle' as any, label: 'Speaker Title / Role', type: 'text', required: false, placeholder: 'e.g. Senior Tech Policy Analyst', section: 'Lower Third', defaultValue: 'Senior Tech Policy Analyst' },
+  { key: 'source', label: 'Source Citation', type: 'text', required: false, placeholder: 'e.g. SOURCE: Bloomberg Intelligence', section: 'Source', defaultValue: 'SOURCE: Bloomberg Semiconductor Intelligence Index 2026' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE FOR DEEP DIVE ESSAYS 🔔', section: 'Call to Action', defaultValue: 'SUBSCRIBE FOR DEEP DIVE ESSAYS 🔔' },
+];
+
+const youtubeLofiMusicVisualizerFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Radio / Station Name', type: 'text', required: true, placeholder: 'e.g. CHILL BEATS RADIO', section: 'Station', defaultValue: 'CHILL BEATS RADIO ☕' },
+  { key: 'productName', label: 'Stream Title', type: 'text', required: true, placeholder: 'e.g. Midnight Study Sessions', section: 'Track', defaultValue: 'Midnight Study Sessions • Lofi Hip Hop Beats' },
+  { key: 'headline', label: 'Track Title', type: 'text', required: true, placeholder: 'e.g. Late Night Coffee & Raindrops', section: 'Track', defaultValue: 'Late Night Coffee & Raindrops 🌧️' },
+  { key: 'artistName' as any, label: 'Artist Name', type: 'text', required: false, placeholder: 'e.g. Lofi Girl & Chillhop Music', section: 'Track', defaultValue: 'Lofi Girl & Chillhop Music' },
+  { key: 'tickerText', label: 'Stream Schedule / Status', type: 'text', required: false, placeholder: 'e.g. LIVE NOW • 24/7 STUDY BEATS', section: 'Station', defaultValue: 'LIVE NOW • 24/7 STUDY BEATS' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE & CHILL WITH US 🎧', section: 'Call to Action', defaultValue: 'SUBSCRIBE & CHILL WITH US 🎧' },
+];
+
+const youtubeMotivationQuoteShortsFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Channel Name', type: 'text', required: true, placeholder: 'e.g. MINDSET MASTERY', section: 'Channel', defaultValue: 'MINDSET MASTERY 👑' },
+  { key: 'headline', label: 'Quote Text', type: 'textarea', required: true, placeholder: 'e.g. The mind is everything. What you think, you become.', section: 'Quote', defaultValue: 'The mind is everything. What you think, you become.' },
+  { key: 'quoteAuthor' as any, label: 'Quote Author', type: 'text', required: false, placeholder: 'e.g. — Buddha', section: 'Quote', defaultValue: '— Buddha' },
+  { key: 'feature1', label: 'Mindset Pillar 1', type: 'text', required: false, placeholder: 'e.g. Master Your Thoughts', section: 'Pillars', defaultValue: '1. Master Your Thoughts' },
+  { key: 'feature2', label: 'Mindset Pillar 2', type: 'text', required: false, placeholder: 'e.g. Take Relentless Action', section: 'Pillars', defaultValue: '2. Take Relentless Action' },
+  { key: 'feature3', label: 'Mindset Pillar 3', type: 'text', required: false, placeholder: 'e.g. Never Settle', section: 'Pillars', defaultValue: '3. Never Settle' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE FOR DAILY MOTIVATION ⚡', section: 'Call to Action', defaultValue: 'SUBSCRIBE FOR DAILY MOTIVATION ⚡' },
+];
+
+const youtubeCookingRecipeCardFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Kitchen / Show Name', type: 'text', required: true, placeholder: 'e.g. GOURMET KITCHEN', section: 'Kitchen', defaultValue: 'GOURMET KITCHEN 🍳' },
+  { key: 'productName', label: 'Recipe Dish Name', type: 'text', required: true, placeholder: 'e.g. Creamy Tuscan Salmon', section: 'Recipe', defaultValue: 'Creamy Garlic Butter Tuscan Salmon' },
+  { key: 'description', label: 'Dish Description', type: 'textarea', required: false, placeholder: 'Short taste summary', section: 'Recipe' },
+  { key: 'productImageUrl', label: 'Dish Photo', type: 'image', required: false, section: 'Media', imageLabel: 'Dish photo' },
+  { key: 'feature1', label: 'Ingredient 1', type: 'text', required: false, placeholder: 'e.g. 4 Fresh Salmon Filets', section: 'Ingredients' },
+  { key: 'feature2', label: 'Ingredient 2', type: 'text', required: false, placeholder: 'e.g. 3 Cloves Minced Garlic', section: 'Ingredients' },
+  { key: 'feature3', label: 'Ingredient 3', type: 'text', required: false, placeholder: 'e.g. Heavy Cream & Spinach', section: 'Ingredients' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. FULL RECIPE IN DESCRIPTION 📖', section: 'Call to Action', defaultValue: 'FULL RECIPE IN DESCRIPTION 📖' },
+];
+
+const youtubeDiyCraftTutorialFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Craft Channel Name', type: 'text', required: true, placeholder: 'e.g. CRAFTY CREATIONS', section: 'Channel', defaultValue: 'CRAFTY CREATIONS ✂️' },
+  { key: 'productName', label: 'DIY Project Title', type: 'text', required: true, placeholder: 'e.g. DIY Origami Lanterns', section: 'Project', defaultValue: 'DIY Origami Floating Flower Lanterns' },
+  { key: 'feature1', label: 'Material 1', type: 'text', required: false, placeholder: 'e.g. Colored Craft Paper', section: 'Materials' },
+  { key: 'feature2', label: 'Material 2', type: 'text', required: false, placeholder: 'e.g. Scissors & Tape', section: 'Materials' },
+  { key: 'feature3', label: 'Material 3', type: 'text', required: false, placeholder: 'e.g. LED Tea Candle', section: 'Materials' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE FOR WEEKLY DIY 🎨', section: 'Call to Action', defaultValue: 'SUBSCRIBE FOR WEEKLY DIY PROJECTS 🎨' },
+];
+
+const youtubeMovieReviewRatingFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Show Name', type: 'text', required: true, placeholder: 'e.g. FLICK CRITICS', section: 'Show', defaultValue: 'FLICK CRITICS 🍿' },
+  { key: 'productName', label: 'Movie Title', type: 'text', required: true, placeholder: 'e.g. DUNE: PART THREE', section: 'Movie', defaultValue: 'DUNE: PART THREE' },
+  { key: 'description', label: 'Spoiler-Free Synopsis', type: 'textarea', required: false, placeholder: 'Movie overview', section: 'Movie' },
+  { key: 'productImageUrl', label: 'Movie Poster Photo', type: 'image', required: false, section: 'Media', imageLabel: 'Movie poster' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. FULL SPOILER REVIEW ON YOUTUBE 🎬', section: 'Call to Action', defaultValue: 'FULL SPOILER REVIEW ON YOUTUBE 🎬' },
+];
+
+const youtubeCarAutoReviewFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Auto Show Name', type: 'text', required: true, placeholder: 'e.g. APEX AUTO REVIEWS', section: 'Show', defaultValue: 'APEX AUTO REVIEWS 🏎️' },
+  { key: 'productName', label: 'Car Model Name', type: 'text', required: true, placeholder: 'e.g. Apex GT Supercar 2026', section: 'Car Specs', defaultValue: 'Apex GT Supercar 2026' },
+  { key: 'price', label: 'MSRP Price', type: 'text', required: false, placeholder: 'e.g. $245,000 MSRP', section: 'Car Specs' },
+  { key: 'productImageUrl', label: 'Supercar Photo', type: 'image', required: false, section: 'Media', imageLabel: 'Supercar photo' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. WATCH FULL TRACK TEST DRIVE 🏁', section: 'Call to Action', defaultValue: 'WATCH FULL TRACK TEST DRIVE 🏁' },
+];
+
+const youtubeCryptoTradingSignalsFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Channel Name', type: 'text', required: true, placeholder: 'e.g. CRYPTO SIGNALS PRO', section: 'Channel', defaultValue: 'CRYPTO SIGNALS PRO 📊' },
+  { key: 'productName', label: 'Analysis Headline', type: 'text', required: true, placeholder: 'e.g. BITCOIN BULL BREAKOUT ALERT', section: 'Signal', defaultValue: 'BITCOIN BULL BREAKOUT ALERT' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. JOIN OUR FREE SIGNAL CHANNEL 🚀', section: 'Call to Action', defaultValue: 'JOIN OUR FREE TELEGRAM & YOUTUBE SIGNAL CHANNEL 🚀' },
+];
+
+const youtubeCodingProjectShowcaseFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Developer Channel', type: 'text', required: true, placeholder: 'e.g. OPEN SOURCE LABS', section: 'Dev', defaultValue: 'OPEN SOURCE LABS 💻' },
+  { key: 'productName', label: 'Project Name', type: 'text', required: true, placeholder: 'e.g. VividAI Video Engine', section: 'Project', defaultValue: 'VividAI — Autonomous Video Generator' },
+  { key: 'description', label: 'Project Description', type: 'textarea', required: false, placeholder: 'Short tech summary', section: 'Project' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. STAR & CLONE REPO ON GITHUB ⭐', section: 'Call to Action', defaultValue: 'STAR & CLONE REPO ON GITHUB ⭐' },
+];
+
+const youtubeAnimeMangaTopListFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Anime Channel Name', type: 'text', required: true, placeholder: 'e.g. ANIME CENTRAL', section: 'Channel', defaultValue: 'ANIME CENTRAL ⚔️' },
+  { key: 'productName', label: 'Ranking Video Title', type: 'text', required: true, placeholder: 'e.g. TOP 10 ANIME CHARACTERS', section: 'Ranking', defaultValue: 'TOP 10 MOST POWERFUL ANIME CHARACTERS 2026' },
+  { key: 'productImageUrl', label: 'Character Visual', type: 'image', required: false, section: 'Media', imageLabel: 'Character image' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE FOR DAILY RANKINGS 🍿', section: 'Call to Action', defaultValue: 'SUBSCRIBE FOR DAILY ANIME RANKINGS 🍿' },
+];
+
+const youtubeRealEstatePropertyTourFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Media Company Name', type: 'text', required: true, placeholder: 'e.g. LUXURY HOMES MEDIA', section: 'Company', defaultValue: 'LUXURY HOMES MEDIA 🏡' },
+  { key: 'productName', label: 'Property Title', type: 'text', required: true, placeholder: 'e.g. Beverly Hills Modern Mansion', section: 'Property', defaultValue: 'The Beverly Hills Modern Glass Mansion' },
+  { key: 'price', label: 'Listing Price', type: 'text', required: false, placeholder: 'e.g. $12,950,000', section: 'Property' },
+  { key: 'productImageUrl', label: 'Property Photo', type: 'image', required: false, section: 'Media', imageLabel: 'Property photo' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SCHEDULE PRIVATE SHOWING 📞', section: 'Call to Action', defaultValue: 'SCHEDULE PRIVATE PROPERTY SHOWING 📞' },
+];
+
+const youtubeLifeHacksTipsFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Channel Name', type: 'text', required: true, placeholder: 'e.g. SMART HACKS', section: 'Channel', defaultValue: 'SMART HACKS 💡' },
+  { key: 'productName', label: 'Hack Title', type: 'text', required: true, placeholder: 'e.g. Cable Management Hack', section: 'Hack', defaultValue: '3-Second Cable Management Hack' },
+  { key: 'headline', label: 'Problem Statement', type: 'text', required: true, placeholder: 'e.g. Tired of messy cables?', section: 'Hack', defaultValue: 'Tired of messy cables tangling behind your desk?' },
+  { key: 'description', label: 'Solution Hack', type: 'textarea', required: false, placeholder: 'How the hack works', section: 'Hack', defaultValue: 'Use plastic bread tags to label and organize all power cables instantly!' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE FOR DAILY HACKS 🚀', section: 'Call to Action', defaultValue: 'SUBSCRIBE FOR DAILY GENIUS HACKS 🚀' },
+];
+
+const youtubeTopTrendingNewsFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'News Show Name', type: 'text', required: true, placeholder: 'e.g. TRENDING DAILY', section: 'Show', defaultValue: 'TRENDING DAILY ⚡' },
+  { key: 'productName', label: 'Trending News Title', type: 'text', required: true, placeholder: 'e.g. VIRAL DRAMA REVEALED', section: 'News', defaultValue: 'INTERNET BREAKING VIRAL DRAMA REVEALED' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE & TURN ON BELL 🔔', section: 'Call to Action', defaultValue: 'SUBSCRIBE & TURN ON NOTIFICATIONS 🔔' },
+];
+
+const youtubeHistoryStorytellingFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Channel Name', type: 'text', required: true, placeholder: 'e.g. HISTORY UNCOVERED', section: 'Channel', defaultValue: 'HISTORY UNCOVERED 🏛️' },
+  { key: 'productName', label: 'Documentary Subject', type: 'text', required: true, placeholder: 'e.g. THE LOST LIBRARY OF ALEXANDRIA', section: 'Documentary', defaultValue: 'THE LOST LIBRARY OF ALEXANDRIA' },
+  { key: 'productImageUrl', label: 'Historical Image', type: 'image', required: false, section: 'Media', imageLabel: 'Historical photo' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. WATCH FULL DOCUMENTARY 🍿', section: 'Call to Action', defaultValue: 'WATCH THE FULL HISTORY DOCUMENTARY 🍿' },
+];
+
+const youtubeBeautyMakeupTutorialFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Channel Name', type: 'text', required: true, placeholder: 'e.g. GLAM & GLOW', section: 'Channel', defaultValue: 'GLAM & GLOW 💄' },
+  { key: 'productName', label: 'Look Title', type: 'text', required: true, placeholder: 'e.g. Sunset Glow Soft Glam', section: 'Look', defaultValue: 'Sunset Glow Soft Glam Makeup Tutorial' },
+  { key: 'productImageUrl', label: 'Look Photo', type: 'image', required: false, section: 'Media', imageLabel: 'Look photo' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SHOP PALETTE & CODE 🛍️', section: 'Call to Action', defaultValue: 'SHOP PALETTE & USE DISCOUNT CODE 🛍️' },
+];
+
+const youtubeAsmrRelaxationFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'ASMR Channel Name', type: 'text', required: true, placeholder: 'e.g. SLEEP & RELAXATION ASMR', section: 'Channel', defaultValue: 'SLEEP & RELAXATION ASMR 🌙' },
+  { key: 'productName', label: 'Track / Sound Title', type: 'text', required: true, placeholder: 'e.g. 3-Hour Rain & Tapping', section: 'Sound', defaultValue: '3-Hour Rain & Gentle Tapping for Deep Sleep' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE FOR NIGHTLY SOUNDS 🎧', section: 'Call to Action', defaultValue: 'SUBSCRIBE FOR NIGHTLY SLEEP SOUNDS 🎧' },
+];
+
+const youtubeBusinessCaseStudyFields: TemplateFieldDefinition[] = [
+  { key: 'brandName', label: 'Show Name', type: 'text', required: true, placeholder: 'e.g. STRATEGY INSIGHTS', section: 'Show', defaultValue: 'STRATEGY INSIGHTS 📈' },
+  { key: 'productName', label: 'Case Study Title', type: 'text', required: true, placeholder: 'e.g. HOW AIRBNB DISRUPTED HOSPITALITY', section: 'Case Study', defaultValue: 'HOW AIRBNB DISRUPTED THE $1 TRILLION HOSPITALITY INDUSTRY' },
+  { key: 'ctaText', label: 'CTA Text', type: 'text', required: true, placeholder: 'e.g. SUBSCRIBE FOR CASE STUDIES 📊', section: 'Call to Action', defaultValue: 'SUBSCRIBE FOR BUSINESS CASE STUDIES 📊' },
+];
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Registry
 // ─────────────────────────────────────────────────────────────────────────────
@@ -401,6 +605,30 @@ export const templateFieldConfigs: Record<TemplateId, TemplateFieldDefinition[]>
   'course-masterclass-promo': courseMasterclassPromoFields,
   'ecommerce-flash-sale': ecommerceFlashSaleFields,
   'event-webinar-teaser': eventWebinarTeaserFields,
+  'youtube-outro-endcard': youtubeOutroEndcardFields,
+  'youtube-tech-review-unboxing': youtubeTechReviewUnboxingFields,
+  'youtube-shorts-facts-quiz': youtubeShortsFactsQuizFields,
+  'youtube-gaming-montage-intro': youtubeGamingMontageIntroFields,
+  'youtube-podcast-video-intro': youtubePodcastVideoIntroFields,
+  'youtube-fitness-workout-timer': youtubeFitnessWorkoutTimerFields,
+  'youtube-cinematic-travel-opener': youtubeCinematicTravelOpenerFields,
+  'youtube-news-commentary-lowerthird': youtubeNewsCommentaryLowerthirdFields,
+  'youtube-lofi-music-visualizer': youtubeLofiMusicVisualizerFields,
+  'youtube-motivation-quote-shorts': youtubeMotivationQuoteShortsFields,
+  'youtube-cooking-recipe-card': youtubeCookingRecipeCardFields,
+  'youtube-diy-craft-tutorial': youtubeDiyCraftTutorialFields,
+  'youtube-movie-review-rating': youtubeMovieReviewRatingFields,
+  'youtube-car-auto-review': youtubeCarAutoReviewFields,
+  'youtube-crypto-trading-signals': youtubeCryptoTradingSignalsFields,
+  'youtube-coding-project-showcase': youtubeCodingProjectShowcaseFields,
+  'youtube-anime-manga-top-list': youtubeAnimeMangaTopListFields,
+  'youtube-real-estate-property-tour': youtubeRealEstatePropertyTourFields,
+  'youtube-life-hacks-tips': youtubeLifeHacksTipsFields,
+  'youtube-top-trending-news': youtubeTopTrendingNewsFields,
+  'youtube-history-storytelling': youtubeHistoryStorytellingFields,
+  'youtube-beauty-makeup-tutorial': youtubeBeautyMakeupTutorialFields,
+  'youtube-asmr-relaxation': youtubeAsmrRelaxationFields,
+  'youtube-business-case-study': youtubeBusinessCaseStudyFields,
 };
 
 /** Returns the field configuration for a template, or an empty array if unknown. */

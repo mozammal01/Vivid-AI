@@ -208,7 +208,7 @@ export default function DashboardHome() {
         <div className="flex items-center justify-between">
           <div className="space-y-1">
             <h2 className="text-xl font-bold tracking-tight">
-              Available Templates (26)
+              Available Templates ({templateList.length})
             </h2>
             <p className="text-xs text-muted-foreground">
               Select any high-converting template to launch the editor with pre-loaded demo data.
@@ -220,7 +220,7 @@ export default function DashboardHome() {
               size="sm"
               className="gap-1.5 text-xs text-muted-foreground hover:text-foreground"
             >
-              View All 26 Templates
+              View All {templateList.length} Templates
               <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>

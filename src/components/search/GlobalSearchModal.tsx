@@ -81,13 +81,46 @@ export function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModalProps) {
   }, [query]);
 
   // Quick Navigation Links
-  const quickLinks = [
-    { name: "Dashboard Overview", href: "/dashboard", icon: LayoutDashboard, category: "Navigation", desc: "Main control panel & recent activity" },
-    { name: "Create Video Studio", href: "/create-video", icon: Video, category: "Studio", desc: "AI script-to-video studio generator" },
-    { name: "All Video Templates (26)", href: "/dashboard/templates", icon: Layers, category: "Gallery", desc: "Explore all 26 professional presets" },
-    { name: "My Videos & Exports", href: "/dashboard/my-videos", icon: Film, category: "Library", desc: "Manage saved projects & renders" },
-    { name: "Account & Settings", href: "/dashboard/settings", icon: Settings, category: "System", desc: "API keys, profile & rendering defaults" },
-  ];
+  const quickLinks = useMemo(
+    () => [
+      {
+        name: "Dashboard Overview",
+        href: "/dashboard",
+        icon: LayoutDashboard,
+        category: "Navigation",
+        desc: "Main control panel & recent activity",
+      },
+      {
+        name: "Create Video Studio",
+        href: "/create-video",
+        icon: Video,
+        category: "Studio",
+        desc: "AI script-to-video studio generator",
+      },
+      {
+        name: `All Video Templates (${templateList.length})`,
+        href: "/dashboard/templates",
+        icon: Layers,
+        category: "Gallery",
+        desc: `Explore all ${templateList.length} professional presets`,
+      },
+      {
+        name: "My Videos & Exports",
+        href: "/dashboard/my-videos",
+        icon: Film,
+        category: "Library",
+        desc: "Manage saved projects & renders",
+      },
+      {
+        name: "Account & Settings",
+        href: "/dashboard/settings",
+        icon: Settings,
+        category: "System",
+        desc: "API keys, profile & rendering defaults",
+      },
+    ],
+    []
+  );
 
   const filteredQuickLinks = useMemo(() => {
     if (!query.trim()) return quickLinks;
@@ -98,7 +131,7 @@ export function GlobalSearchModal({ isOpen, onClose }: GlobalSearchModalProps) {
         l.category.toLowerCase().includes(q) ||
         l.desc.toLowerCase().includes(q)
     );
-  }, [query]);
+  }, [query, quickLinks]);
 
   const totalResults = filteredTemplates.length + filteredProjects.length + filteredQuickLinks.length;
 

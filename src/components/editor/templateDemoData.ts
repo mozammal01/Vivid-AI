@@ -383,6 +383,243 @@ export function getDemoFormValuesForTemplate(
         ctaText: "RESERVE YOUR FREE SPOT 🎟️",
       };
 
+    case "youtube-outro-endcard":
+      return {
+        ...defaults,
+        brandName: "CREATOR HUB",
+        tagline: "NEW VIDEOS EVERY TUESDAY & THURSDAY",
+        headline: "THANKS FOR WATCHING!",
+        productName: "Top 10 AI Secrets Revealed",
+        ctaText: "SUBSCRIBE FOR MORE 🔔",
+      };
+
+    case "youtube-tech-review-unboxing":
+      return {
+        ...defaults,
+        brandName: "TECH UNBOXED ⚡",
+        productName: "CyberPhone Pro Ultra 2026",
+        description: "The world’s first smartphone powered by neural processing units and transparent OLED.",
+        price: "$1,199",
+        category: "FLAGSHIP SMARTPHONE REVIEW",
+        feature1: "160Hz Transparent OLED Display",
+        feature2: "3-Day Solid State Battery Life",
+        feature3: "Premium price tag",
+        ctaText: "FULL REVIEW ON YOUTUBE 🍿",
+      };
+
+    case "youtube-shorts-facts-quiz":
+      return {
+        ...defaults,
+        brandName: "DAILY TRIVIA SHORTS 🧠",
+        headline: "Which planet in our solar system spins backwards compared to all others?",
+        feature1: "A) Mars 🔴",
+        feature2: "B) Venus 🪐",
+        feature3: "C) Jupiter ⚡",
+        description: "ANSWER: Venus spins clockwise on its axis!",
+        ctaText: "SUBSCRIBE FOR DAILY QUIZZES 🔔",
+      };
+
+    case "youtube-gaming-montage-intro":
+      return {
+        ...defaults,
+        brandName: "VORTEX GAMING 🎮",
+        headline: "VORTEX_NEXUS #1337",
+        productName: "VALORANT RADIANT HIGHLIGHTS",
+        category: "GLOBAL RADIANT #1",
+        feature1: "52 KILLS • 0 DEATHS",
+        ctaText: "SUBSCRIBE FOR DAILY CLUTCHES ⚡",
+      };
+
+    case "youtube-podcast-video-intro":
+      return {
+        ...defaults,
+        brandName: "THE DEEP DIVE SHOW",
+        headline: "THE AGI REVOLUTION IS HERE",
+        productName: "The Future of Artificial General Intelligence",
+        speakerName: "Host: Marcus Vance",
+        ctaText: "LISTEN & SUBSCRIBE ON YOUTUBE 🍿",
+      };
+
+    case "youtube-fitness-workout-timer":
+      return {
+        ...defaults,
+        brandName: "SHRED 30 FITNESS 🔥",
+        productName: "FULL BODY FAT BURN WORKOUT",
+        headline: "JUMPING JACKS & BURPEES",
+        description: "EST. 350 KCAL BURN",
+        feature1: "NEXT: High Knee Sprints 🏃‍♂️",
+        ctaText: "SUBSCRIBE FOR DAILY WORKOUTS 🏋️",
+      };
+
+    case "youtube-cinematic-travel-opener":
+      return {
+        ...defaults,
+        brandName: "WILD EXPLORER FILMS ✈️",
+        headline: "THE SWISS ALPS",
+        productName: "SWITZERLAND ALPS EXPEDITION",
+        location: "45.9765° N, 7.7491° E",
+        description: "WHERE HEAVEN TOUCHES THE EARTH",
+        ctaText: "WATCH THE FULL CINEMATIC FILM 🍿",
+      };
+
+    case "youtube-news-commentary-lowerthird":
+      return {
+        ...defaults,
+        brandName: "EXPLAINER ESSAYS 🧠",
+        productName: "How Semiconductor Supply Chains Rule Global Geopolitics",
+        headline: "CHAPTER 2: FABRICATION BOTTLENECKS",
+        source: "SOURCE: Bloomberg Semiconductor Intelligence Index 2026",
+        ctaText: "SUBSCRIBE FOR DEEP DIVE ESSAYS 🔔",
+      };
+
+    case "youtube-lofi-music-visualizer":
+      return {
+        ...defaults,
+        brandName: "CHILL BEATS RADIO ☕",
+        productName: "Midnight Study Sessions • Lofi Hip Hop Beats",
+        headline: "Late Night Coffee & Raindrops 🌧️",
+        tickerText: "LIVE NOW • 24/7 STUDY BEATS",
+        ctaText: "SUBSCRIBE & CHILL WITH US 🎧",
+      };
+
+    case "youtube-motivation-quote-shorts":
+      return {
+        ...defaults,
+        brandName: "MINDSET MASTERY 👑",
+        headline: "The mind is everything. What you think, you become.",
+        feature1: "1. Master Your Thoughts",
+        feature2: "2. Take Relentless Action",
+        feature3: "3. Never Settle",
+        ctaText: "SUBSCRIBE FOR DAILY MOTIVATION ⚡",
+      };
+
+    case "youtube-cooking-recipe-card":
+      return {
+        ...defaults,
+        brandName: "GOURMET KITCHEN 🍳",
+        productName: "Creamy Garlic Butter Tuscan Salmon",
+        description: "Pan-seared salmon bathed in a rich garlic parmesan cream sauce with sun-dried tomatoes.",
+        feature1: "4 Fresh Salmon Filets",
+        feature2: "3 Cloves Minced Garlic",
+        feature3: "1 Cup Heavy Cream & Spinach",
+        ctaText: "FULL RECIPE IN DESCRIPTION 📖",
+      };
+
+    case "youtube-diy-craft-tutorial":
+      return {
+        ...defaults,
+        brandName: "CRAFTY CREATIONS ✂️",
+        productName: "DIY Origami Floating Flower Lanterns",
+        feature1: "Colored Craft Paper",
+        feature2: "Pair of Scissors & Tape",
+        feature3: "LED Tea Light Candle",
+        ctaText: "SUBSCRIBE FOR WEEKLY DIY PROJECTS 🎨",
+      };
+
+    case "youtube-movie-review-rating":
+      return {
+        ...defaults,
+        brandName: "FLICK CRITICS 🍿",
+        productName: "DUNE: PART THREE",
+        description: "Denis Villeneuve returns with a breathtaking masterpiece of sci-fi cinema.",
+        ctaText: "FULL SPOILER REVIEW ON YOUTUBE 🎬",
+      };
+
+    case "youtube-car-auto-review":
+      return {
+        ...defaults,
+        brandName: "APEX AUTO REVIEWS 🏎️",
+        productName: "Apex GT Supercar 2026",
+        price: "$245,000 MSRP",
+        ctaText: "WATCH FULL TRACK TEST DRIVE 🏁",
+      };
+
+    case "youtube-crypto-trading-signals":
+      return {
+        ...defaults,
+        brandName: "CRYPTO SIGNALS PRO 📊",
+        productName: "BITCOIN BULL BREAKOUT ALERT",
+        ctaText: "JOIN OUR FREE SIGNAL CHANNEL 🚀",
+      };
+
+    case "youtube-coding-project-showcase":
+      return {
+        ...defaults,
+        brandName: "OPEN SOURCE LABS 💻",
+        productName: "VividAI — Autonomous Video Generator",
+        description: "Full-stack AI video generation engine built with Next.js 15, Remotion & TypeScript.",
+        ctaText: "STAR & CLONE REPO ON GITHUB ⭐",
+      };
+
+    case "youtube-anime-manga-top-list":
+      return {
+        ...defaults,
+        brandName: "ANIME CENTRAL ⚔️",
+        productName: "TOP 10 MOST POWERFUL ANIME CHARACTERS 2026",
+        ctaText: "SUBSCRIBE FOR DAILY ANIME RANKINGS 🍿",
+      };
+
+    case "youtube-real-estate-property-tour":
+      return {
+        ...defaults,
+        brandName: "LUXURY HOMES MEDIA 🏡",
+        productName: "The Beverly Hills Modern Glass Mansion",
+        price: "$12,950,000",
+        ctaText: "SCHEDULE PRIVATE PROPERTY SHOWING 📞",
+      };
+
+    case "youtube-life-hacks-tips":
+      return {
+        ...defaults,
+        brandName: "SMART HACKS 💡",
+        productName: "3-Second Cable Management Hack",
+        headline: "Tired of messy cables tangling behind your desk?",
+        description: "Use plastic bread tags to label and organize all power cables instantly!",
+        ctaText: "SUBSCRIBE FOR DAILY GENIUS HACKS 🚀",
+      };
+
+    case "youtube-top-trending-news":
+      return {
+        ...defaults,
+        brandName: "TRENDING DAILY ⚡",
+        productName: "INTERNET BREAKING VIRAL DRAMA REVEALED",
+        ctaText: "SUBSCRIBE & TURN ON NOTIFICATIONS 🔔",
+      };
+
+    case "youtube-history-storytelling":
+      return {
+        ...defaults,
+        brandName: "HISTORY UNCOVERED 🏛️",
+        productName: "THE LOST LIBRARY OF ALEXANDRIA",
+        description: "Investigating the tragic destruction of antiquity’s greatest repository of human knowledge.",
+        ctaText: "WATCH THE FULL HISTORY DOCUMENTARY 🍿",
+      };
+
+    case "youtube-beauty-makeup-tutorial":
+      return {
+        ...defaults,
+        brandName: "GLAM & GLOW 💄",
+        productName: "Sunset Glow Soft Glam Makeup Tutorial",
+        description: "Achieve a glowing glass-skin aesthetic with warm peach and rose gold accents.",
+        ctaText: "SHOP PALETTE & USE DISCOUNT CODE 🛍️",
+      };
+
+    case "youtube-asmr-relaxation":
+      return {
+        ...defaults,
+        brandName: "SLEEP & RELAXATION ASMR 🌙",
+        productName: "3-Hour Rain & Gentle Tapping for Deep Sleep",
+        ctaText: "SUBSCRIBE FOR NIGHTLY SLEEP SOUNDS 🎧",
+      };
+
+    case "youtube-business-case-study":
+      return {
+        ...defaults,
+        brandName: "STRATEGY INSIGHTS 📈",
+        productName: "HOW AIRBNB DISRUPTED THE $1 TRILLION HOSPITALITY INDUSTRY",
+        ctaText: "SUBSCRIBE FOR BUSINESS CASE STUDIES 📊",
+      };
+
     default:
       return defaults;
   }

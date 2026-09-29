@@ -29,6 +29,30 @@ import { saasProductAdDefaultContent } from './SaaSProductAd/defaults';
 import { courseMasterclassPromoDefaultContent } from './CourseMasterclassPromo/defaults';
 import { ecommerceFlashSaleDefaultContent } from './EcommerceFlashSale/defaults';
 import { eventWebinarTeaserDefaultContent } from './EventWebinarTeaser/defaults';
+import { youtubeOutroEndcardDefaultContent } from './YouTubeOutroEndcard/defaults';
+import { youtubeTechReviewUnboxingDefaultContent } from './YouTubeTechReviewUnboxing/defaults';
+import { youtubeShortsFactsQuizDefaultContent } from './YouTubeShortsFactsQuiz/defaults';
+import { youtubeGamingMontageIntroDefaultContent } from './YouTubeGamingMontageIntro/defaults';
+import { youtubePodcastVideoIntroDefaultContent } from './YouTubePodcastVideoIntro/defaults';
+import { youtubeFitnessWorkoutTimerDefaultContent } from './YouTubeFitnessWorkoutTimer/defaults';
+import { youtubeCinematicTravelOpenerDefaultContent } from './YouTubeCinematicTravelOpener/defaults';
+import { youtubeNewsCommentaryLowerthirdDefaultContent } from './YouTubeNewsCommentaryLowerthird/defaults';
+import { youtubeLofiMusicVisualizerDefaultContent } from './YouTubeLofiMusicVisualizer/defaults';
+import { youtubeMotivationQuoteShortsDefaultContent } from './YouTubeMotivationQuoteShorts/defaults';
+import { youtubeCookingRecipeCardDefaultContent } from './YouTubeCookingRecipeCard/defaults';
+import { youtubeDiyCraftTutorialDefaultContent } from './YouTubeDiyCraftTutorial/defaults';
+import { youtubeMovieReviewRatingDefaultContent } from './YouTubeMovieReviewRating/defaults';
+import { youtubeCarAutoReviewDefaultContent } from './YouTubeCarAutoReview/defaults';
+import { youtubeCryptoTradingSignalsDefaultContent } from './YouTubeCryptoTradingSignals/defaults';
+import { youtubeCodingProjectShowcaseDefaultContent } from './YouTubeCodingProjectShowcase/defaults';
+import { youtubeAnimeMangaTopListDefaultContent } from './YouTubeAnimeMangaTopList/defaults';
+import { youtubeRealEstatePropertyTourDefaultContent } from './YouTubeRealEstatePropertyTour/defaults';
+import { youtubeLifeHacksTipsDefaultContent } from './YouTubeLifeHacksTips/defaults';
+import { youtubeTopTrendingNewsDefaultContent } from './YouTubeTopTrendingNews/defaults';
+import { youtubeHistoryStorytellingDefaultContent } from './YouTubeHistoryStorytelling/defaults';
+import { youtubeBeautyMakeupTutorialDefaultContent } from './YouTubeBeautyMakeupTutorial/defaults';
+import { youtubeAsmrRelaxationDefaultContent } from './YouTubeAsmrRelaxation/defaults';
+import { youtubeBusinessCaseStudyDefaultContent } from './YouTubeBusinessCaseStudy/defaults';
 
 /**
  * Template Registry
@@ -460,6 +484,390 @@ export const templateRegistry: Record<TemplateId, TemplateMetadata> = {
     durationInFrames: 450,
     featured: true,
     defaultProps: eventWebinarTeaserDefaultContent,
+  },
+
+  'youtube-outro-endcard': {
+    id: 'youtube-outro-endcard',
+    name: 'YouTube End Screen & Channel Outro',
+    description:
+      'Interactive-looking YouTube end card with video preview slots, subscribe button pulse, subscriber count, and recommended video links.',
+    category: 'intro',
+    tags: ['youtube', 'outro', 'end-screen', 'subscribe', 'channel', 'video-end'],
+    thumbnailUrl: '/templates/top-10-countdown.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeOutroEndcardDefaultContent,
+  },
+
+  'youtube-tech-review-unboxing': {
+    id: 'youtube-tech-review-unboxing',
+    name: 'YouTube Tech Review & Unboxing',
+    description:
+      'Sleek futuristic tech review layout with pros/cons matrix, score badge, hardware specs breakdown, and verdict summary.',
+    category: 'explainer',
+    tags: ['tech', 'unboxing', 'review', 'gadgets', 'hardware', 'youtube'],
+    thumbnailUrl: '/templates/tech-product-launch.jpg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeTechReviewUnboxingDefaultContent,
+  },
+
+  'youtube-shorts-facts-quiz': {
+    id: 'youtube-shorts-facts-quiz',
+    name: 'YouTube Shorts Trivia & Quiz',
+    description:
+      'High-retention vertical 9:16 quiz & trivia template with animated countdown timer ring, question cards, option reveals, and answer pop.',
+    category: 'social-media',
+    tags: ['shorts', 'quiz', 'trivia', 'facts', 'viral', 'youtube-shorts'],
+    thumbnailUrl: '/templates/youtube-shorts-viral-hook.svg',
+    supportedAspectRatios: ['9:16', '16:9', '1:1'],
+    defaultAspectRatio: '9:16',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeShortsFactsQuizDefaultContent,
+  },
+
+  'youtube-gaming-montage-intro': {
+    id: 'youtube-gaming-montage-intro',
+    name: 'YouTube Esports & Gaming Montage Intro',
+    description:
+      'High-octane gaming montage opener with streamer rank HUD, kill streak counters, cyberpunk glitch typography, and subscribe prompt.',
+    category: 'social-media',
+    tags: ['gaming', 'montage', 'esports', 'valorant', 'twitch', 'youtube'],
+    thumbnailUrl: '/templates/gaming-stream-highlight.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeGamingMontageIntroDefaultContent,
+  },
+
+  'youtube-podcast-video-intro': {
+    id: 'youtube-podcast-video-intro',
+    name: 'YouTube Video Podcast & Talk Show Opener',
+    description:
+      'Broadcast video podcast intro with host & guest portrait cards, topic banner, animated equalizer audio wave, and subscribe CTA.',
+    category: 'intro',
+    tags: ['podcast', 'talk-show', 'interview', 'audio-wave', 'youtube', 'broadcast'],
+    thumbnailUrl: '/templates/podcast-highlight.jpg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubePodcastVideoIntroDefaultContent,
+  },
+
+  'youtube-fitness-workout-timer': {
+    id: 'youtube-fitness-workout-timer',
+    name: 'YouTube Workout & Fitness Exercise Timer',
+    description:
+      'High-energy fitness overlay template with exercise title badge, animated circular countdown timer, upcoming exercise teaser card, and rest banner.',
+    category: 'tutorial',
+    tags: ['fitness', 'workout', 'timer', 'exercise', 'gym', 'youtube'],
+    thumbnailUrl: '/templates/fitness-motivation.jpg',
+    supportedAspectRatios: ['16:9', '9:16', '1:1'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeFitnessWorkoutTimerDefaultContent,
+  },
+
+  'youtube-cinematic-travel-opener': {
+    id: 'youtube-cinematic-travel-opener',
+    name: 'YouTube Atmospheric Cinematic Travel Opener',
+    description:
+      'Ultra-aesthetic cinematic travel film intro with film grain letterbox bars, GPS coordinates stamp, elevation indicator, and quote overlay.',
+    category: 'intro',
+    tags: ['travel', 'cinematic', 'vlog', 'film', 'nature', 'youtube'],
+    thumbnailUrl: '/templates/youtube-vlog-intro.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeCinematicTravelOpenerDefaultContent,
+  },
+
+  'youtube-news-commentary-lowerthird': {
+    id: 'youtube-news-commentary-lowerthird',
+    name: 'YouTube Commentary & Video Essay Lower Thirds',
+    description:
+      'Documentary-style video essay overlay with speaker identity lower third badge, source citation card, chapter tag, and subscribe banner.',
+    category: 'explainer',
+    tags: ['video-essay', 'commentary', 'lower-third', 'documentary', 'youtube'],
+    thumbnailUrl: '/templates/breaking-news.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeNewsCommentaryLowerthirdDefaultContent,
+  },
+
+  'youtube-lofi-music-visualizer': {
+    id: 'youtube-lofi-music-visualizer',
+    name: 'YouTube Lo-Fi & Music Stream Visualizer',
+    description:
+      'Chill aesthetic music stream opener with spinning vinyl album artwork, audio frequency spectrum visualizer, now playing widget, and stream schedule.',
+    category: 'social-media',
+    tags: ['lofi', 'music', 'visualizer', 'stream', 'chill', 'youtube'],
+    thumbnailUrl: '/templates/podcast-highlight.jpg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeLofiMusicVisualizerDefaultContent,
+  },
+
+  'youtube-motivation-quote-shorts': {
+    id: 'youtube-motivation-quote-shorts',
+    name: 'YouTube Motivational Mindset Shorts',
+    description:
+      'Dramatic high-impact dark mode motivational video template with glowing gold aura, kinetic quote reveal, mindset pillars, and channel sign-off.',
+    category: 'social-media',
+    tags: ['motivation', 'mindset', 'quotes', 'shorts', 'inspiration', 'youtube-shorts'],
+    thumbnailUrl: '/templates/fitness-motivation.jpg',
+    supportedAspectRatios: ['9:16', '16:9', '1:1'],
+    defaultAspectRatio: '9:16',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeMotivationQuoteShortsDefaultContent,
+  },
+
+  'youtube-cooking-recipe-card': {
+    id: 'youtube-cooking-recipe-card',
+    name: 'YouTube Cooking & Recipe Card Showcase',
+    description:
+      'Warm culinary recipe showcase with prep time badges, ingredients checklist, dish photo spotlight, and recipe link CTA.',
+    category: 'tutorial',
+    tags: ['cooking', 'recipe', 'food', 'culinary', 'chef', 'youtube'],
+    thumbnailUrl: '/templates/restaurant-promotion.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeCookingRecipeCardDefaultContent,
+  },
+
+  'youtube-diy-craft-tutorial': {
+    id: 'youtube-diy-craft-tutorial',
+    name: 'YouTube DIY & Craft Step-by-Step Tutorial',
+    description:
+      'Vibrant creator craft layout with materials list, difficulty level, step count badge, and channel subscribe CTA.',
+    category: 'tutorial',
+    tags: ['diy', 'craft', 'tutorial', 'creative', 'origami', 'youtube'],
+    thumbnailUrl: '/templates/creative-portfolio-showcase.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeDiyCraftTutorialDefaultContent,
+  },
+
+  'youtube-movie-review-rating': {
+    id: 'youtube-movie-review-rating',
+    name: 'YouTube Film Review & Score Breakdown',
+    description:
+      'Cinematic dark theater review template featuring critic score badge, audience rating dial, poster spotlight, and spoiler-free review CTA.',
+    category: 'explainer',
+    tags: ['movie', 'review', 'film', 'cinema', 'rating', 'youtube'],
+    thumbnailUrl: '/templates/cinematic-movie-trailer.jpg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeMovieReviewRatingDefaultContent,
+  },
+
+  'youtube-car-auto-review': {
+    id: 'youtube-car-auto-review',
+    name: 'YouTube Automotive & Car Review Telemetry',
+    description:
+      'High-speed automotive review template with 0-60mph acceleration stats, horsepower meter, top speed telemetry, and supercar photo spotlight.',
+    category: 'explainer',
+    tags: ['car', 'automotive', 'supercar', 'review', 'telemetry', 'youtube'],
+    thumbnailUrl: '/templates/luxury-commercial.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeCarAutoReviewDefaultContent,
+  },
+
+  'youtube-crypto-trading-signals': {
+    id: 'youtube-crypto-trading-signals',
+    name: 'YouTube Crypto & Forex Technical Analysis Signals',
+    description:
+      'Financial trading signal video template featuring pair symbol, entry/target price parameters, gain percentage, and leverage indicator.',
+    category: 'explainer',
+    tags: ['crypto', 'bitcoin', 'trading', 'signals', 'forex', 'youtube'],
+    thumbnailUrl: '/templates/finance-crypto-explainer.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeCryptoTradingSignalsDefaultContent,
+  },
+
+  'youtube-coding-project-showcase': {
+    id: 'youtube-coding-project-showcase',
+    name: 'YouTube Developer Portfolio & Open Source Showcase',
+    description:
+      'IDE dark theme open-source project showcase with GitHub repo card, star count badge, tech stack tags, and terminal clone command.',
+    category: 'tutorial',
+    tags: ['coding', 'github', 'developer', 'open-source', 'portfolio', 'youtube'],
+    thumbnailUrl: '/templates/tech-tutorial-explainer.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeCodingProjectShowcaseDefaultContent,
+  },
+
+  'youtube-anime-manga-top-list': {
+    id: 'youtube-anime-manga-top-list',
+    name: 'YouTube Anime & Manga Power Ranking Highlights',
+    description:
+      'Stylized manga ranking template featuring character spotlight, power level score, animation studio badge, and anime title card.',
+    category: 'social-media',
+    tags: ['anime', 'manga', 'power-level', 'ranking', 'solo-leveling', 'youtube'],
+    thumbnailUrl: '/templates/top-10-countdown.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeAnimeMangaTopListDefaultContent,
+  },
+
+  'youtube-real-estate-property-tour': {
+    id: 'youtube-real-estate-property-tour',
+    name: 'YouTube Luxury Home Tour & Property Walkthrough',
+    description:
+      'Architectural home tour lower third with listing price, square footage, amenity highlights grid, and agent contact details.',
+    category: 'ads',
+    tags: ['real-estate', 'property', 'luxury-home', 'mansion', 'tour', 'youtube'],
+    thumbnailUrl: '/templates/real-estate-showcase.jpg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeRealEstatePropertyTourDefaultContent,
+  },
+
+  'youtube-life-hacks-tips': {
+    id: 'youtube-life-hacks-tips',
+    name: 'YouTube Quick Life Hacks & Smart Tips',
+    description:
+      'Fast-paced 9:16 vertical hack template with problem statement card, solution hack reveal box, difficulty rating, and daily hack CTA.',
+    category: 'social-media',
+    tags: ['life-hacks', 'tips', 'shorts', 'genius-hacks', 'viral', 'youtube-shorts'],
+    thumbnailUrl: '/templates/youtube-shorts-viral-hook.svg',
+    supportedAspectRatios: ['9:16', '16:9', '1:1'],
+    defaultAspectRatio: '9:16',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeLifeHacksTipsDefaultContent,
+  },
+
+  'youtube-top-trending-news': {
+    id: 'youtube-top-trending-news',
+    name: 'YouTube Pop Culture & Creator News Update',
+    description:
+      'Vibrant pop-culture news format with trending topic badge, viral view count, social post quote frame, and notification bell CTA.',
+    category: 'social-media',
+    tags: ['trending', 'news', 'pop-culture', 'viral', 'creator', 'youtube'],
+    thumbnailUrl: '/templates/breaking-news.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeTopTrendingNewsDefaultContent,
+  },
+
+  'youtube-history-storytelling': {
+    id: 'youtube-history-storytelling',
+    name: 'YouTube History & Historical Mystery Documentary',
+    description:
+      'Vintage historical theme with era timestamp, historical quote scroll, monumental image framing, and full documentary teaser.',
+    category: 'intro',
+    tags: ['history', 'documentary', 'ancient', 'mystery', 'storytelling', 'youtube'],
+    thumbnailUrl: '/templates/cinematic-documentary.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeHistoryStorytellingDefaultContent,
+  },
+
+  'youtube-beauty-makeup-tutorial': {
+    id: 'youtube-beauty-makeup-tutorial',
+    name: 'YouTube Beauty & Soft Glam Makeup Tutorial',
+    description:
+      'Pastel glam beauty tutorial layout with look title, featured shade palette list, tutorial badge, and promo discount code.',
+    category: 'tutorial',
+    tags: ['beauty', 'makeup', 'glam', 'tutorial', 'skincare', 'youtube'],
+    thumbnailUrl: '/templates/fashion-lookbook.jpg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeBeautyMakeupTutorialDefaultContent,
+  },
+
+  'youtube-asmr-relaxation': {
+    id: 'youtube-asmr-relaxation',
+    name: 'YouTube ASMR & Sleep Sounds Visualizer',
+    description:
+      'Calming ambient relaxation template with binaural sound trigger badge, soft glowing audio wave animation, and sweet dreams sign-off.',
+    category: 'social-media',
+    tags: ['asmr', 'sleep', 'relaxation', 'rain', 'binaural', 'youtube'],
+    thumbnailUrl: '/templates/podcast-highlight.jpg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeAsmrRelaxationDefaultContent,
+  },
+
+  'youtube-business-case-study': {
+    id: 'youtube-business-case-study',
+    name: 'YouTube Business & Startup Strategy Case Study',
+    description:
+      'Corporate analytical layout featuring company market valuation stat, growth drivers list, strategy takeaway card, and channel CTA.',
+    category: 'explainer',
+    tags: ['business', 'case-study', 'startup', 'strategy', 'finance', 'youtube'],
+    thumbnailUrl: '/templates/saas-product-ad.svg',
+    supportedAspectRatios: ['16:9', '1:1', '9:16'],
+    defaultAspectRatio: '16:9',
+    fps: 30,
+    durationInFrames: 450,
+    featured: true,
+    defaultProps: youtubeBusinessCaseStudyDefaultContent,
   },
 };
 
